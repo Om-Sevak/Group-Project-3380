@@ -16,10 +16,10 @@ CREATE TABLE entertainment(
     mediaID integer primary key IDENTITY(1,1),
     mediaName VARCHAR(1000) UNIQUE not NULL,
     releaseYear integer,
-    ageRestriction integer check (ageRestriction >= 0),
-    rottenTomatoes integer check (rottenTomatoes >= 0 AND rottenTomatoes <= 100),
-    IMDB DECIMAL (2, 1) check (IMDB >= 0 AND IMDB <= 100),
-    duration INTEGER check (duration > 0),
+    ageRestriction VARCHAR(100),
+    rottenTomatoes VARCHAR(100),
+    IMDB VARCHAR(100),
+    duration VARCHAR(500),
     mediaDescription VARCHAR (1000)
 );
 
@@ -98,3 +98,5 @@ INSERT INTO platform (platformName) VALUES ('Amazon Prime');
 INSERT INTO platform (platformName) VALUES ('Disney Plus');
 INSERT INTO platform (platformName) VALUES ('Hulu');
 
+Select * from platform
+Order by  platformID;
