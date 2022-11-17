@@ -1,3 +1,6 @@
+USE cs3380;
+
+
 drop table if exists madeIn;
 drop table if exists mediaGenre;
 drop table if exists castInvolved;
@@ -89,12 +92,12 @@ CREATE TABLE mediaGenre(
     PRIMARY KEY(mediaID, genreID)
 );
 
---These are fixed media type
-INSERT into mediaType (mediaTypeName) VALUES ('Movie');
-INSERT into mediaType (mediaTypeName) VALUES ('Tv-Show');
---These are fixed platforms
-INSERT INTO platform (platformName) VALUES ('Netflix');
-INSERT INTO platform (platformName) VALUES ('Amazon Prime');
-INSERT INTO platform (platformName) VALUES ('Disney Plus');
-INSERT INTO platform (platformName) VALUES ('Hulu');
+-- --These are fixed media type
+-- INSERT into mediaType (mediaTypeName) VALUES ('Movie');
+-- INSERT into mediaType (mediaTypeName) VALUES ('Tv-Show');
+-- --These are fixed platforms
+-- INSERT INTO platform (platformName) VALUES ('Netflix');
+-- INSERT INTO platform (platformName) VALUES ('Amazon Prime');
+-- INSERT INTO platform (platformName) VALUES ('Disney Plus');
+-- INSERT INTO platform (platformName) VALUES ('Hulu');
 
