@@ -5,6 +5,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -14,62 +15,61 @@ import java.util.Properties;
 
 public class PopulatingData {
 
+    private static Connection connection;
     // Connect to your database.
     // Replace server name, username, and password with your credentials
     public static void main(String[] args) {
 
-        // Properties prop = new Properties();
-        // String fileName = "auth.cfg";
-        // try {
-        // FileInputStream configFile = new FileInputStream(fileName);
-        // prop.load(configFile);
-        // configFile.close();
-        // } catch (FileNotFoundException ex) {
-        // System.out.println("Could not find config file.");
-        // System.exit(1);
-        // } catch (IOException ex) {
-        // System.out.println("Error reading config file.");
-        // System.exit(1);
-        // }
-        // String username = (prop.getProperty("username"));
-        // String password = (prop.getProperty("password"));
+        Properties prop = new Properties();
+        String fileName = "auth.cfg";
+        try {
+        FileInputStream configFile = new FileInputStream(fileName);
+        prop.load(configFile);
+        configFile.close();
+        } catch (FileNotFoundException ex) {
+        System.out.println("Could not find config file.");
+        System.exit(1);
+        } catch (IOException ex) {
+        System.out.println("Error reading config file.");
+        System.exit(1);
+        }
+        String username = (prop.getProperty("username"));
+        String password = (prop.getProperty("password"));
 
-        // if (username == null || password == null){
-        // System.out.println("Username or password not provided.");
-        // System.exit(1);
-        // }
+        if (username == null || password == null){
+        System.out.println("Username or password not provided.");
+        System.exit(1);
+        }
 
-        // String connectionUrl =
-        // "jdbc:sqlserver://uranium.cs.umanitoba.ca:1433;"
-        // + "database=cs3380;"
-        // + "user=" + username + ";"
-        // + "password="+ password +";"
-        // + "encrypt=false;"
-        // + "trustServerCertificate=false;"
-        // + "loginTimeout=30;";
+        String connectionUrl =
+        "jdbc:sqlserver://uranium.cs.umanitoba.ca:1433;"
+        + "database=cs3380;"
+        + "user=" + username + ";"
+        + "password="+ password +";"
+        + "encrypt=false;"
+        + "trustServerCertificate=false;"
+        + "loginTimeout=30;";
 
-        // ResultSet resultSet = null;
+        ResultSet resultSet = null;
 
-        // try (Connection connection = DriverManager.getConnection(connectionUrl);
-        // Statement statement = connection.createStatement();) {
+        try {
+            connection = DriverManager.getConnection(connectionUrl);
+             Statement statement = connection.createStatement();
 
-        // // Create and execute a SELECT SQL statement.
-        // String selectSql = "SELECT firstname, lastname, provinces.name from people
-        // join provinces on people.provinceID = provinces.provinceID;";
-        // resultSet = statement.executeQuery(selectSql);
+        // Create and execute a SELECT SQL statement.
+        String selectSql = "SELECT * FROM platform";
+        resultSet = statement.executeQuery(selectSql);
 
-        // // Print results from select statement
-        // while (resultSet.next()) {
-        // System.out.println(resultSet.getString(1) +
-        // " " + resultSet.getString(2) +
-        // " lives in " + resultSet.getString(3));
-        // }
-        // }
-        // catch (SQLException e) {
-        // e.printStackTrace();
-        // }
+        // Print results from select statement
+            while (resultSet.next()) {
+                System.out.println(resultSet.getString("platformID") + " Name : " + resultSet.getString("platformName"));
+            }
+        }
+        catch (SQLException e) {
+        e.printStackTrace();
+        }
 
-        readCSV("D:\\Uni\\3rd year\\3380\\GroupProject\\Entertainment-CSV.csv");
+        readCSV("D:\\UManitoba\\Fall 2022\\COMP 3380\\Project\\SmallData.csv");
     }
 
     public static void readCSV(String fileName) {
@@ -112,6 +112,7 @@ public class PopulatingData {
                             flag = false;
                         } else {
                             country.add(line[j]);
+                            addCountry(line[j]);
                         }
                         j++;
                     }
@@ -142,19 +143,21 @@ public class PopulatingData {
                     }
                     System.out.println("Type: " + type);
                     System.out.println("Title: " + title);
-                    System.out.println("Directors: " + director);
-                    System.out.println("Cast: " + cast);
+                    // System.out.println("Directors: " + director);
+                    // System.out.println("Cast: " + cast);
                     System.out.println("Country: " + country);
-                    System.out.println("Date: " + date);
-                    System.out.println("Release Year: " + release_year);
-                    System.out.println("Rated: " + rated);
-                    System.out.println("Duration: " + duration);
-                    System.out.println("IMDB: " + IMDB);
-                    System.out.println("Rotten: " + rotten);
-                    System.out.println("Platform: " + platform);
-                    System.out.println("Listed in: " + listed_in);
-                    System.out.println("Description: " + description.trim());
+                    // System.out.println("Date: " + date);
+                    // System.out.println("Release Year: " + release_year);
+                    // System.out.println("Rated: " + rated);
+                    // System.out.println("Duration: " + duration);
+                    // System.out.println("IMDB: " + IMDB);
+                    // System.out.println("Rotten: " + rotten);
+                    // System.out.println("Platform: " + platform);
+                    // System.out.println("Listed in: " + listed_in);
+                    // System.out.println("Description: " + description.trim());
                     System.out.println("-------------------------------------------------");
+
+                    
                 } catch (ArrayIndexOutOfBoundsException e) {
                     System.out.println("Error Corrupted Data: Bypassing corrupted row");
                     corruptedEntry++;
@@ -168,4 +171,44 @@ public class PopulatingData {
         System.out.println("Number of corrupted rows bypassed: " + corruptedEntry);
 
     }
+
+    //adding data into their respective tables
+    public void addDirector( String directorName){
+     
+        try{
+            String insertQuery = "Insert Into director Values ( ? );";
+
+            PreparedStatement statement = connection.prepareStatement(insertQuery);
+            statement.setString(1, directorName);
+            ResultSet resultSet = statement.executeQuery();
+
+            while(resultSet.next())
+            {
+                System.out.println( " Director Name : " + resultSet.getString("dirName"));
+            }
+
+        }catch(SQLException e){
+            e.printStackTrace();
+        }
+    }
+
+    public static void addCountry (String countryName) 
+    {
+        try{
+            String insertQuery = "Insert Into country (countryName) Values ( ? );";
+            PreparedStatement statement = connection.prepareStatement(insertQuery);
+            statement.setString(1, countryName);
+            ResultSet resultSet = statement.executeQuery();
+            
+            while(resultSet.next())
+                System.out.println("Country Name " + resultSet.getString("countryName") );  
+
+        }
+        catch(SQLException e)
+        {
+            e.printStackTrace();
+        }
+    }
+
+    
 }

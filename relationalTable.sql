@@ -1,3 +1,5 @@
+use cs3380;
+
 drop table if exists madeIn;
 drop table if exists mediaGenre;
 drop table if exists castInvolved;
