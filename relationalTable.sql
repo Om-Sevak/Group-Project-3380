@@ -1,4 +1,5 @@
-USE cs3380;
+
+use cs3380;
 
 
 drop table if exists madeIn;
@@ -22,7 +23,7 @@ CREATE TABLE entertainment(
     ageRestriction VARCHAR(100),
     rottenTomatoes VARCHAR(100),
     IMDB VARCHAR(100),
-    duration VARCHAR(500),
+    duration VARCHAR(500),
     mediaDescription VARCHAR (1000)
 );
 
@@ -101,3 +102,5 @@ CREATE TABLE mediaGenre(
 -- INSERT INTO platform (platformName) VALUES ('Disney Plus');
 -- INSERT INTO platform (platformName) VALUES ('Hulu');
 
+Select * from platform
+Order by  platformID;
