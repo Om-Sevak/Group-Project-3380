@@ -56,8 +56,6 @@ public static void main(String[] args) {
     }
     catch (SQLException e) {
     e.printStackTrace();
-
-        readCSV("D:\\UManitoba\\Fall 2022\\COMP 3380\\Project\\SmallData.csv");
     }
 
 }
@@ -118,7 +116,6 @@ public static void readCSV(String fileName, Connection connection) {
                             }
                         }catch (SQLException e){
                             redundantEntry++;
-
                         }
                     }
                     j++;
@@ -152,30 +149,7 @@ public static void readCSV(String fileName, Connection connection) {
                     } else {
                         description += line[j] + ",";
                     }
-
                     j++;
-
-                    System.out.println("Type: " + type);
-                    System.out.println("Title: " + title);
-                    // System.out.println("Directors: " + director);
-                    // System.out.println("Cast: " + cast);
-                    System.out.println("Country: " + country);
-                    // System.out.println("Date: " + date);
-                    // System.out.println("Release Year: " + release_year);
-                    // System.out.println("Rated: " + rated);
-                    // System.out.println("Duration: " + duration);
-                    // System.out.println("IMDB: " + IMDB);
-                    // System.out.println("Rotten: " + rotten);
-                    // System.out.println("Platform: " + platform);
-                    // System.out.println("Listed in: " + listed_in);
-                    // System.out.println("Description: " + description.trim());
-                    System.out.println("-------------------------------------------------");
-
-                    
-                } catch (ArrayIndexOutOfBoundsException e) {
-                    System.out.println("Error Corrupted Data: Bypassing corrupted row");
-                    corruptedEntry++;
-
                 }
           
 
@@ -286,44 +260,4 @@ public static void readCSV(String fileName, Connection connection) {
 
         return data.trim();
     }
-
-    //adding data into their respective tables
-    public void addDirector( String directorName){
-     
-        try{
-            String insertQuery = "Insert Into director Values ( ? );";
-
-            PreparedStatement statement = connection.prepareStatement(insertQuery);
-            statement.setString(1, directorName);
-            ResultSet resultSet = statement.executeQuery();
-
-            while(resultSet.next())
-            {
-                System.out.println( " Director Name : " + resultSet.getString("dirName"));
-            }
-
-        }catch(SQLException e){
-            e.printStackTrace();
-        }
-    }
-
-    public static void addCountry (String countryName) 
-    {
-        try{
-            String insertQuery = "Insert Into country (countryName) Values ( ? );";
-            PreparedStatement statement = connection.prepareStatement(insertQuery);
-            statement.setString(1, countryName);
-            ResultSet resultSet = statement.executeQuery();
-            
-            while(resultSet.next())
-                System.out.println("Country Name " + resultSet.getString("countryName") );  
-
-        }
-        catch(SQLException e)
-        {
-            e.printStackTrace();
-        }
-    }
-
-    
 }
