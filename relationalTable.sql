@@ -20,11 +20,11 @@ CREATE TABLE entertainment(
     mediaID integer primary key IDENTITY(1,1),
     mediaName VARCHAR(1000) UNIQUE not NULL,
     releaseYear integer,
-    ageRestriction VARCHAR(100),
+    rated VARCHAR(100),
     rottenTomatoes VARCHAR(100),
     IMDB VARCHAR(100),
     duration VARCHAR(500),
-    mediaDescription VARCHAR (1000)
+    mediaDescription VARCHAR (5000)
 );
 
 CREATE TABLE director(
@@ -102,5 +102,3 @@ CREATE TABLE mediaGenre(
 -- INSERT INTO platform (platformName) VALUES ('Disney Plus');
 -- INSERT INTO platform (platformName) VALUES ('Hulu');
 
-Select * from platform
-Order by  platformID;

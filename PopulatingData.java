@@ -13,6 +13,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
+import javax.naming.spi.DirStateFactory.Result;
+
 public class PopulatingData {
 
 // Connect to your database.
@@ -121,13 +123,13 @@ public static void readCSV(String fileName, Connection connection) {
                     j++;
                 }
                 String date = line[j];
-                String release_year = line[j + 1];
+                String releaseYear = line[j + 1];
                 String rated = line[j + 2];
                 String duration = line[j + 3];
                 String IMDB = line[j + 4];
                 String rotten = line[j + 5];
                 String platform = line[j + 6];
-                ArrayList<String> listed_in = new ArrayList<String>();
+               
                 flag = true;
                 for (j = j + 7; j < line.length && flag; j++) {
                     if (line[j].equals("|")) {
@@ -151,6 +153,15 @@ public static void readCSV(String fileName, Connection connection) {
                     }
                     j++;
                 }
+
+                try {
+                    int mediaID = addMedia(title, releaseYear, rated, rotten, IMDB, duration, description, connection);
+                    System.out.println(mediaID);
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+
+                
           
 
             } catch (ArrayIndexOutOfBoundsException e) {
@@ -201,6 +212,16 @@ public static void readCSV(String fileName, Connection connection) {
             System.out.println(rs.getString("castID") + " " + rs.getString("castName"));
         }
 
+        //printing media table
+        System.out.println("Media Table");
+        System.out.println("-------------------------------------------------");
+        query = "SELECT * FROM entertainment order by mediaID";
+        stmt = connection.createStatement();
+        rs = stmt.executeQuery(query);
+        while (rs.next()) {
+            System.out.println(rs.getString("mediaID") + " " + rs.getString("mediaName") + " " + rs.getString("releaseYear") + " " + rs.getString("rated") + " " + rs.getString("rottenTomatoes") + " " + rs.getString("IMDB") + " " + rs.getString("duration") + " " + rs.getString("mediaDescription"));
+        }
+
 
     } catch (IOException e) {
         e.printStackTrace();
@@ -213,40 +234,82 @@ public static void readCSV(String fileName, Connection connection) {
 
 }
 
-    public static void addDirector( String directorName, Connection connection) throws SQLException
+    public static int addDirector( String directorName, Connection connection) throws SQLException
     {
+        int dirID = 0;
         String insertQuery = "Insert Into director (dirName) Values (?);";
-        PreparedStatement statement = connection.prepareStatement(insertQuery);
+        PreparedStatement statement = connection.prepareStatement(insertQuery, Statement.RETURN_GENERATED_KEYS);
         statement.setString(1, directorName);
         statement.executeUpdate();
-
+        ResultSet rs = statement.getGeneratedKeys();
+        if (rs.next()) {
+            dirID = rs.getInt(1);
+        }
+        return dirID;
     }
 
-    public static void addCountry( String countryName, Connection connection) throws SQLException
+    public static int addCountry( String countryName, Connection connection) throws SQLException
     {
+        int countryID = 0;
         String insertQuery = "Insert Into country (countryName) Values (?);";
-        PreparedStatement statement = connection.prepareStatement(insertQuery);
+        PreparedStatement statement = connection.prepareStatement(insertQuery, Statement.RETURN_GENERATED_KEYS);
         statement.setString(1, countryName);
         statement.executeUpdate();
+        ResultSet rs = statement.getGeneratedKeys();
+        if (rs.next()) {
+            countryID = rs.getInt(1);
+        }
+        return countryID;
 
     }
 
-    public static void addGenre( String genreName, Connection connection) throws SQLException
+    public static int addGenre( String genreName, Connection connection) throws SQLException
     {
+        int genreID = 0;
         String insertQuery = "Insert Into genre (genreName) Values (?);";
-        PreparedStatement statement = connection.prepareStatement(insertQuery);
+        PreparedStatement statement = connection.prepareStatement(insertQuery, Statement.RETURN_GENERATED_KEYS);
         statement.setString(1, genreName);
         statement.executeUpdate();
-
+        ResultSet rs = statement.getGeneratedKeys();
+        if (rs.next()) {
+            genreID = rs.getInt(1);
+        }
+        return genreID;
     }
 
-    public static void addCast( String castName, Connection connection) throws SQLException
+    public static int addCast( String castName, Connection connection) throws SQLException
     {
+        int castID = 0;
         String insertQuery = "Insert Into cast (castName) Values (?);";
-        PreparedStatement statement = connection.prepareStatement(insertQuery);
+        PreparedStatement statement = connection.prepareStatement(insertQuery, Statement.RETURN_GENERATED_KEYS);
         statement.setString(1, castName);
         statement.executeUpdate();
+        ResultSet rs = statement.getGeneratedKeys();
+        if(rs.next()){
+            castID = rs.getInt(1);
+        }
+        return castID;
+    }
 
+    public static int addMedia(String mediaName, String releaseYear, String rated, String rottenTomatoes, String IMDB, String duration, String mediaDescription, Connection connection) throws SQLException {
+
+        int mediaID = -1;
+        String inserQuery = "Insert Into entertainment (mediaName, releaseYear, rated, rottenTomatoes, IMDB, duration, mediaDescription) Values (?,?,?,?,?,?,?);";
+        PreparedStatement statement = connection.prepareStatement(inserQuery, Statement.RETURN_GENERATED_KEYS);
+        statement.setString(1, mediaName);
+        statement.setString(2, releaseYear);
+        statement.setString(3, rated);
+        statement.setString(4, rottenTomatoes);
+        statement.setString(5, IMDB);
+        statement.setString(6, duration);
+        statement.setString(7, mediaDescription);
+        statement.executeUpdate();
+        ResultSet rs = statement.getGeneratedKeys();
+        if (rs.next()) {
+            mediaID = rs.getInt(1);
+        }
+
+        return mediaID;
     }
 
     public static String cleanData(String data){
