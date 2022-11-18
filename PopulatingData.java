@@ -78,16 +78,33 @@ public static void readCSV(String fileName, Connection connection) {
                 String title = line[1];
                 boolean flag = true;
                 int j;
+                ArrayList<Integer> dirID = new ArrayList<Integer>();
+                int temp;
                 for (j = 2; j < line.length && flag; j++) {
+                    
                     if (line[j].equals("|")) {
                         flag = false;
                     } else {
                         try{
                             if(!(line[j].equals(""))){
-                                addDirector(cleanData(line[j]), connection);
+                                temp = addDirector(cleanData(line[j]), connection);
+                                dirID.add(temp);
                             }
                         }catch (SQLException e){
                             redundantEntry++;
+                            if(e.getErrorCode() == 2627){
+                                try{
+                                    String query = "SELECT dirID FROM director WHERE dirName = ?";
+                                    PreparedStatement statement = connection.prepareStatement(query);
+                                    statement.setString(1, cleanData(line[j]));
+                                    ResultSet rs = statement.executeQuery();
+                                    rs.next();
+                                    temp = rs.getInt("dirID");  
+                                    dirID.add(temp);
+                                }catch(SQLException e1){
+                                    //do nothing
+                                }
+                            }
                         }
                     }
                 } 
@@ -154,16 +171,33 @@ public static void readCSV(String fileName, Connection connection) {
                     j++;
                 }
 
+
                 try {
                     int mediaID = addMedia(title, releaseYear, rated, rotten, IMDB, duration, description, connection);
-                    System.out.println(mediaID);
+                    addIsA(mediaID, type, connection);
+                    addStreamedOn(mediaID, platform, date, connection);
+                    for (int i = 0; i < dirID.size(); i++) {
+                        addDirectedBy(mediaID, dirID.get(i), connection);
+                    }
                 } catch (SQLException e) {
-                    e.printStackTrace();
+                    if(e.getErrorCode() == 2627){
+                        try{
+                            String query = "SELECT mediaID FROM entertainment where mediaName = (?);";
+                            PreparedStatement ps = connection.prepareStatement(query);
+                            ps.setString(1, title);
+                            ResultSet rs = ps.executeQuery();
+                            int mediaID = 0;
+                            while(rs.next()){
+                                mediaID = rs.getInt("mediaID");
+                            }
+                            addStreamedOn(mediaID, platform, date, connection);
+                        }catch (SQLException e1){
+                            //do nothing
+                        }
+                    }
                 }
-
                 
-          
-
+               
             } catch (ArrayIndexOutOfBoundsException e) {
                 System.out.println("Error Corrupted Data: Bypassing corrupted row");
                 corruptedEntry++;
@@ -172,55 +206,96 @@ public static void readCSV(String fileName, Connection connection) {
 
         }
 
-        //printing director table
-        System.out.println("Director Table");
-        System.out.println("-------------------------------------------------");
-        String query = "SELECT * FROM Director order by dirID";
-        Statement stmt = connection.createStatement();
-        ResultSet rs = stmt.executeQuery(query);
+        //printing directed by
+        System.out.println("mediaID directorID");
+        System.out.println("------------------------------------");
+        String query = "SELECT * FROM directedBy";
+        PreparedStatement ps = connection.prepareStatement(query);
+        ResultSet rs = ps.executeQuery();
         while (rs.next()) {
-            System.out.println(rs.getString("dirID") + " " + rs.getString("dirName"));
+            System.out.println(rs.getInt("mediaID") + " " + rs.getInt("dirID"));
         }
 
-        //printing country table
-        System.out.println("Country Table");
-        System.out.println("-------------------------------------------------");
-        query = "SELECT * FROM Country order by countryID";
-        stmt = connection.createStatement();
-        rs = stmt.executeQuery(query);
+        query = "Select * from director order by dirID";
+        ps = connection.prepareStatement(query);
+        rs = ps.executeQuery();
+        System.out.println("dirID dirName");
+        System.out.println("------------------------------------");
         while (rs.next()) {
-            System.out.println(rs.getString("countryID") + " " + rs.getString("countryName"));
+            System.out.println(rs.getInt("dirID") + " " + rs.getString("dirName"));
         }
 
-        //printing genre table
-        System.out.println("Genre Table");
-        System.out.println("-------------------------------------------------");
-        query = "SELECT * FROM Genre order by genreID";
-        stmt = connection.createStatement();
-        rs = stmt.executeQuery(query);
-        while (rs.next()) {
-            System.out.println(rs.getString("genreID") + " " + rs.getString("genreName"));
-        }
+        // //printing addStreamedOn
 
-        //printing cast table
-        System.out.println("Cast Table");
-        System.out.println("-------------------------------------------------");
-        query = "SELECT * FROM Cast order by castID";
-        stmt = connection.createStatement();
-        rs = stmt.executeQuery(query);
-        while (rs.next()) {
-            System.out.println(rs.getString("castID") + " " + rs.getString("castName"));
-        }
+        // System.out.println("MediaID     platformID      dateAdded");
+        // System.out.println("--------------------------------------------------");
+        // String query = "SELECT * FROM addStreamedOn order by mediaID";
+        // Statement stmt = connection.createStatement();
+        // ResultSet rs = stmt.executeQuery(query);
+        // while (rs.next()) {
+        //     System.out.println(rs.getString("mediaID") + "      " + rs.getString("platformID") +"        " + rs.getString("dateAdded"));
+        // }
 
-        //printing media table
-        System.out.println("Media Table");
-        System.out.println("-------------------------------------------------");
-        query = "SELECT * FROM entertainment order by mediaID";
-        stmt = connection.createStatement();
-        rs = stmt.executeQuery(query);
-        while (rs.next()) {
-            System.out.println(rs.getString("mediaID") + " " + rs.getString("mediaName") + " " + rs.getString("releaseYear") + " " + rs.getString("rated") + " " + rs.getString("rottenTomatoes") + " " + rs.getString("IMDB") + " " + rs.getString("duration") + " " + rs.getString("mediaDescription"));
-        }
+        //printing isA
+        // System.out.println("isA");
+        // System.out.println("MediaID                                 TypeID");
+        // System.out.println("--------------------------------------------------");
+        // String query = "SELECT * FROM isA order by mediaID";
+        // Statement stmt = connection.createStatement();
+        // ResultSet rs = stmt.executeQuery(query);
+        // while (rs.next()) {
+        //     System.out.println(rs.getString("mediaID") + "                                           " + rs.getString("mediaTypeID"));
+        // }
+
+        // //printing director table
+        // System.out.println("Director Table");
+        // System.out.println("-------------------------------------------------");
+        // String query = "SELECT * FROM Director order by dirID";
+        // Statement stmt = connection.createStatement();
+        // ResultSet rs = stmt.executeQuery(query);
+        // while (rs.next()) {
+        //     System.out.println(rs.getString("dirID") + " " + rs.getString("dirName"));
+        // }
+
+        // //printing country table
+        // System.out.println("Country Table");
+        // System.out.println("-------------------------------------------------");
+        // query = "SELECT * FROM Country order by countryID";
+        // stmt = connection.createStatement();
+        // rs = stmt.executeQuery(query);
+        // while (rs.next()) {
+        //     System.out.println(rs.getString("countryID") + " " + rs.getString("countryName"));
+        // }
+
+        // //printing genre table
+        // System.out.println("Genre Table");
+        // System.out.println("-------------------------------------------------");
+        // query = "SELECT * FROM Genre order by genreID";
+        // stmt = connection.createStatement();
+        // rs = stmt.executeQuery(query);
+        // while (rs.next()) {
+        //     System.out.println(rs.getString("genreID") + " " + rs.getString("genreName"));
+        // }
+
+        // //printing cast table
+        // System.out.println("Cast Table");
+        // System.out.println("-------------------------------------------------");
+        // query = "SELECT * FROM Cast order by castID";
+        // stmt = connection.createStatement();
+        // rs = stmt.executeQuery(query);
+        // while (rs.next()) {
+        //     System.out.println(rs.getString("castID") + " " + rs.getString("castName"));
+        // }
+
+        // //printing media table
+        // System.out.println("Media Table");
+        // System.out.println("-------------------------------------------------");
+        // query = "SELECT * FROM entertainment order by mediaID";
+        // stmt = connection.createStatement();
+        // rs = stmt.executeQuery(query);
+        // while (rs.next()) {
+        //     System.out.println(rs.getString("mediaID") + " " + rs.getString("mediaName") + " " + rs.getString("releaseYear") + " " + rs.getString("rated") + " " + rs.getString("rottenTomatoes") + " " + rs.getString("IMDB") + " " + rs.getString("duration") + " " + rs.getString("mediaDescription"));
+        // }
 
 
     } catch (IOException e) {
@@ -310,6 +385,52 @@ public static void readCSV(String fileName, Connection connection) {
         }
 
         return mediaID;
+    }
+
+    public static void addIsA(int mediaID, String type, Connection connection) throws SQLException
+    {
+        int typeID ;
+        
+        if(type.equals("Movie")){
+            typeID = 1;
+        } else{
+            typeID = 2;
+        }
+
+        String insertQuery = "Insert Into isA (mediaID, mediaTypeID) Values (?,?);";
+        PreparedStatement statement = connection.prepareStatement(insertQuery);
+        statement.setInt(1, mediaID);
+        statement.setInt(2, typeID);
+        statement.executeUpdate();
+    }
+
+    public static void addStreamedOn(int mediaID, String streamingService, String dateAdded, Connection connection) throws SQLException
+    {
+        int streamingServiceID = Integer.parseInt(streamingService);
+        String insertQuery = "Insert Into streamedOn (mediaID, platformID, dateAdded) Values (?,?,?);";
+        PreparedStatement statement = connection.prepareStatement(insertQuery);
+        statement.setInt(1, mediaID);
+        statement.setInt(2, streamingServiceID);
+        statement.setString(3, dateAdded);
+        statement.executeUpdate();
+    }
+
+    public static void addDirectedBy(int mediaID, int directorID, Connection connection) throws SQLException
+    {
+        String insertQuery = "Insert Into directedBy (mediaID, dirID) Values (?,?);";
+        PreparedStatement statement = connection.prepareStatement(insertQuery);
+        statement.setInt(1, mediaID);
+        statement.setInt(2, directorID);
+        statement.executeUpdate();
+    }
+
+    public static void addCastInvolved(int mediaID, int castID, Connection connection) throws SQLException
+    {
+        String insertQuery = "Insert Into castInvolved (mediaID, castID) Values (?,?);";
+        PreparedStatement statement = connection.prepareStatement(insertQuery);
+        statement.setInt(1, mediaID);
+        statement.setInt(2, castID);
+        statement.executeUpdate();
     }
 
     public static String cleanData(String data){
