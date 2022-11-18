@@ -1,0 +1,13 @@
+drop table if exists madeIn;
+drop table if exists mediaGenre;
+drop table if exists castInvolved;
+drop table if exists directedBy;
+drop table if exists streamedOn;
+drop table if exists isA;
+drop table if exists mediaType;
+drop table if exists platform;
+drop table if exists cast;
+drop table if exists genre;
+drop table if exists country;
+drop table if exists director;
+drop table if exists entertainment;

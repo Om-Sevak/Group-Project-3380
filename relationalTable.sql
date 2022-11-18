@@ -1,3 +1,7 @@
+
+use cs3380;
+
+
 drop table if exists madeIn;
 drop table if exists mediaGenre;
 drop table if exists castInvolved;
@@ -16,11 +20,11 @@ CREATE TABLE entertainment(
     mediaID integer primary key IDENTITY(1,1),
     mediaName VARCHAR(1000) UNIQUE not NULL,
     releaseYear integer,
-    ageRestriction integer check (ageRestriction >= 0),
-    rottenTomatoes integer check (rottenTomatoes >= 0 AND rottenTomatoes <= 100),
-    IMDB DECIMAL (2, 1) check (IMDB >= 0 AND IMDB <= 100),
-    duration INTEGER check (duration > 0),
-    mediaDescription VARCHAR (1000)
+    rated VARCHAR(100),
+    rottenTomatoes VARCHAR(100),
+    IMDB VARCHAR(100),
+    duration VARCHAR(500),
+    mediaDescription VARCHAR (5000)
 );
 
 CREATE TABLE director(
@@ -97,4 +101,6 @@ INSERT INTO platform (platformName) VALUES ('Netflix');
 INSERT INTO platform (platformName) VALUES ('Amazon Prime');
 INSERT INTO platform (platformName) VALUES ('Disney Plus');
 INSERT INTO platform (platformName) VALUES ('Hulu');
+
+SELECT * from mediaType;
 
