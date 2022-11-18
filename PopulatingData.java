@@ -12,6 +12,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
+import java.util.concurrent.SynchronousQueue;
 
 import javax.naming.spi.DirStateFactory.Result;
 
@@ -109,16 +110,35 @@ public static void readCSV(String fileName, Connection connection) {
                     }
                 } 
                 flag = true;
+                String cleanedCast = "";
+                ArrayList<Integer> castID = new ArrayList<Integer>();
                 while (j < line.length && flag) {
                     if (line[j].equals("|")) {
                         flag = false;
                     } else {
                         try{
                             if(!(line[j].equals(""))){
-                                addCast(cleanData(line[j]), connection);
+                                cleanedCast = cleanData(line[j]);
+                                temp = addCast( cleanedCast, connection);
+                                castID.add(temp);
                             }
                         }catch (SQLException e){
+                           
                             redundantEntry++;
+                            if(e.getErrorCode() == 2627){
+                                try{
+                                    String query = "SELECT castID FROM cast WHERE castName = ?";
+                                    PreparedStatement statement = connection.prepareStatement(query);
+                                    statement.setString(1, cleanedCast);
+                                    ResultSet rs = statement.executeQuery();
+                                    rs.next();
+                                    temp = rs.getInt("castID");  
+                                    castID.add(temp);
+                                }catch(SQLException e1){
+                                    //do nothing
+                                    e1.printStackTrace();
+                                }
+                            }
                         }
                     }
                     j++;
@@ -179,7 +199,12 @@ public static void readCSV(String fileName, Connection connection) {
                     for (int i = 0; i < dirID.size(); i++) {
                         addDirectedBy(mediaID, dirID.get(i), connection);
                     }
+                    for(int i = 0; i < castID.size(); i++){
+                        addCastInvolved(mediaID, castID.get(i), connection);
+                    }
+
                 } catch (SQLException e) {
+                
                     if(e.getErrorCode() == 2627){
                         try{
                             String query = "SELECT mediaID FROM entertainment where mediaName = (?);";
@@ -206,24 +231,36 @@ public static void readCSV(String fileName, Connection connection) {
 
         }
 
-        //printing directed by
-        System.out.println("mediaID directorID");
-        System.out.println("------------------------------------");
-        String query = "SELECT * FROM directedBy";
-        PreparedStatement ps = connection.prepareStatement(query);
-        ResultSet rs = ps.executeQuery();
+        //print castInvolved
+        System.out.println("Cast Involved: ");
+        System.out.println("mediaID CastID");
+        System.out.println("------- ------");
+        String query = "SELECT * FROM castInvolved";
+        PreparedStatement statement = connection.prepareStatement(query);
+        ResultSet rs = statement.executeQuery();
         while (rs.next()) {
-            System.out.println(rs.getInt("mediaID") + " " + rs.getInt("dirID"));
+            System.out.println(rs.getInt("mediaID") + " " + rs.getInt("castID"));
         }
 
-        query = "Select * from director order by dirID";
-        ps = connection.prepareStatement(query);
-        rs = ps.executeQuery();
-        System.out.println("dirID dirName");
-        System.out.println("------------------------------------");
-        while (rs.next()) {
-            System.out.println(rs.getInt("dirID") + " " + rs.getString("dirName"));
-        }
+
+        // //printing directed by
+        // System.out.println("mediaID directorID");
+        // System.out.println("------------------------------------");
+        // String query = "SELECT * FROM directedBy";
+        // PreparedStatement ps = connection.prepareStatement(query);
+        // ResultSet rs = ps.executeQuery();
+        // while (rs.next()) {
+        //     System.out.println(rs.getInt("mediaID") + " " + rs.getInt("dirID"));
+        // }
+
+        // query = "Select * from director order by dirID";
+        // ps = connection.prepareStatement(query);
+        // rs = ps.executeQuery();
+        // System.out.println("dirID dirName");
+        // System.out.println("------------------------------------");
+        // while (rs.next()) {
+        //     System.out.println(rs.getInt("dirID") + " " + rs.getString("dirName"));
+        // }
 
         // //printing addStreamedOn
 
@@ -277,15 +314,15 @@ public static void readCSV(String fileName, Connection connection) {
         //     System.out.println(rs.getString("genreID") + " " + rs.getString("genreName"));
         // }
 
-        // //printing cast table
-        // System.out.println("Cast Table");
-        // System.out.println("-------------------------------------------------");
-        // query = "SELECT * FROM Cast order by castID";
-        // stmt = connection.createStatement();
-        // rs = stmt.executeQuery(query);
-        // while (rs.next()) {
-        //     System.out.println(rs.getString("castID") + " " + rs.getString("castName"));
-        // }
+        //printing cast table
+        System.out.println("Cast Table");
+        System.out.println("-------------------------------------------------");
+        query = "SELECT * FROM Cast order by castID";
+        Statement stmt = connection.createStatement();
+        rs = stmt.executeQuery(query);
+        while (rs.next()) {
+            System.out.println(rs.getString("castID") + " " + rs.getString("castName"));
+        }
 
         // //printing media table
         // System.out.println("Media Table");
@@ -432,6 +469,7 @@ public static void readCSV(String fileName, Connection connection) {
         statement.setInt(2, castID);
         statement.executeUpdate();
     }
+
 
     public static String cleanData(String data){
         if(data.charAt(0) == '"'){
