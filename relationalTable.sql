@@ -34,7 +34,7 @@ CREATE TABLE director(
 
 CREATE TABLE country(
     countryID integer primary key IDENTITY(1,1),
-    countryName VARCHAR(1000) UNIQUE not NULL
+    countryName VARCHAR(500) UNIQUE not NULL
 );
 
 CREATE TABLE genre(
