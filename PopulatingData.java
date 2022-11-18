@@ -15,6 +15,7 @@ import java.util.Properties;
 import java.util.concurrent.SynchronousQueue;
 
 import javax.naming.spi.DirStateFactory.Result;
+import javax.swing.plaf.synth.SynthScrollBarUI;
 
 public class PopulatingData {
 
@@ -145,16 +146,31 @@ public static void readCSV(String fileName, Connection connection) {
                 }
     
                 flag = true;
+                ArrayList<Integer> countryID = new ArrayList<Integer>();
                 while (j < line.length && flag) {
                     if (line[j].equals("|")) {
                         flag = false;
                     } else {
                         try{
                             if(!(line[j].equals(""))){
-                                addCountry(cleanData(line[j]), connection);
+                                cleanedData = cleanData(line[j]);
+                                temp = addCountry(cleanedData, connection);
+                                countryID.add(temp);
                             }
                         }catch (SQLException e){
                             redundantEntry++;
+                            try{
+                                String query = "SELECT countryID FROM country WHERE countryName = ?";
+                                PreparedStatement statement = connection.prepareStatement(query);
+                                statement.setString(1, cleanedData);
+                                ResultSet rs = statement.executeQuery();
+                                rs.next();
+                                temp = rs.getInt("countryID");  
+                                countryID.add(temp);
+                            }catch(SQLException e1){
+                                //do nothing
+                         
+                            }
                         }
                     }
                     j++;
@@ -222,6 +238,9 @@ public static void readCSV(String fileName, Connection connection) {
                     for(int i = 0; i < genreID.size(); i++){
                         addMediaGenre(mediaID, genreID.get(i), connection);
                     }
+                    for(int i = 0; i < countryID.size(); i++){
+                        addMadeIn(mediaID, countryID.get(i), connection);
+                    }
 
                 } catch (SQLException e) {
                 
@@ -250,15 +269,25 @@ public static void readCSV(String fileName, Connection connection) {
 
 
         }
-        System.out.println("MediaGenre");
-        System.out.println("MeidaID\tGenreID");
-        System.out.println("________________________________________________________");
-        String query = "SELECT * FROM mediaGenre";
-        PreparedStatement ps = connection.prepareStatement(query);
-        ResultSet rs = ps.executeQuery();
+
+        System.out.println("MediaID CountryID");
+        System.out.println("---------------------------------------------------");
+        String query = "SELECT * FROM madeIn";
+        PreparedStatement statement = connection.prepareStatement(query);
+        ResultSet rs = statement.executeQuery();
         while(rs.next()){
-            System.out.println(rs.getInt("mediaID") + "\t" + rs.getInt("genreID"));
+            System.out.println(rs.getInt("mediaID") + " " + rs.getInt("countryID"));
         }
+
+        // System.out.println("MediaGenre");
+        // System.out.println("MeidaID\tGenreID");
+        // System.out.println("________________________________________________________");
+        // String query = "SELECT * FROM mediaGenre";
+        // PreparedStatement ps = connection.prepareStatement(query);
+        // ResultSet rs = ps.executeQuery();
+        // while(rs.next()){
+        //     System.out.println(rs.getInt("mediaID") + "\t" + rs.getInt("genreID"));
+        // }
 
 
 
@@ -325,25 +354,25 @@ public static void readCSV(String fileName, Connection connection) {
         //     System.out.println(rs.getString("dirID") + " " + rs.getString("dirName"));
         // }
 
-        // //printing country table
-        // System.out.println("Country Table");
-        // System.out.println("-------------------------------------------------");
-        // query = "SELECT * FROM Country order by countryID";
-        // stmt = connection.createStatement();
-        // rs = stmt.executeQuery(query);
-        // while (rs.next()) {
-        //     System.out.println(rs.getString("countryID") + " " + rs.getString("countryName"));
-        // }
-
-        //printing genre table
-        System.out.println("Genre Table");
+        //printing country table
+        System.out.println("Country Table");
         System.out.println("-------------------------------------------------");
-        query = "SELECT * FROM Genre order by genreID";
+        query = "SELECT * FROM Country order by countryID";
         Statement stmt = connection.createStatement();
         rs = stmt.executeQuery(query);
         while (rs.next()) {
-            System.out.println(rs.getString("genreID") + " " + rs.getString("genreName"));
+            System.out.println(rs.getString("countryID") + " " + rs.getString("countryName"));
         }
+
+        // //printing genre table
+        // System.out.println("Genre Table");
+        // System.out.println("-------------------------------------------------");
+        // query = "SELECT * FROM Genre order by genreID";
+        // Statement stmt = connection.createStatement();
+        // rs = stmt.executeQuery(query);
+        // while (rs.next()) {
+        //     System.out.println(rs.getString("genreID") + " " + rs.getString("genreName"));
+        // }
 
         //printing cast table
         // System.out.println("Cast Table");
