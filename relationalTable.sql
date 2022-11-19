@@ -18,78 +18,78 @@ drop table if exists entertainment;
 
 CREATE TABLE entertainment(
     mediaID integer primary key IDENTITY(1,1),
-    mediaName VARCHAR(1000) UNIQUE not NULL,
+    mediaName VARCHAR(500) UNIQUE not NULL,
     releaseYear integer,
-    rated VARCHAR(100),
-    rottenTomatoes VARCHAR(100),
-    IMDB VARCHAR(100),
-    duration VARCHAR(500),
-    mediaDescription VARCHAR (5000)
+    rated VARCHAR(50),
+    rottenTomatoes VARCHAR(10),
+    IMDB VARCHAR(10),
+    duration VARCHAR(50),
+    mediaDescription VARCHAR (500)
 );
 
 CREATE TABLE director(
     dirID integer primary key IDENTITY(1,1),
-    dirName VARCHAR(1000) UNIQUE not NULL
+    dirName VARCHAR(100) UNIQUE not NULL
 );
 
 CREATE TABLE country(
     countryID integer primary key IDENTITY(1,1),
-    countryName VARCHAR(500) UNIQUE not NULL
+    countryName VARCHAR(50) UNIQUE not NULL
 );
 
 CREATE TABLE genre(
     genreID integer primary key IDENTITY(1,1),
-    genreName VARCHAR(1000) UNIQUE not NULL
+    genreName VARCHAR(100) UNIQUE not NULL
 );
 
 CREATE TABLE cast(
     castID integer primary key IDENTITY(1,1),
-    castName VARCHAR(1000) UNIQUE not NULL
+    castName VARCHAR(100) UNIQUE not NULL
 );
 
 CREATE TABLE platform(
     platformID integer primary key IDENTITY(1,1),
-    platformName VARCHAR(1000) UNIQUE 
+    platformName VARCHAR(100) UNIQUE 
 );
 
 CREATE TABLE mediaType(
     mediaTypeID integer primary key IDENTITY(1,1),
-    mediaTypeName VARCHAR(1000) UNIQUE not NULL
+    mediaTypeName VARCHAR(100) UNIQUE not NULL
 );
 
 CREATE TABLE isA(
-    mediaID integer PRIMARY KEY REFERENCES entertainment(mediaID),
-    mediaTypeID INTEGER REFERENCES mediaType(mediaTypeID)  
+    mediaID integer PRIMARY KEY --REFERENCES entertainment(mediaID),
+   , mediaTypeID INTEGER --REFERENCES mediaType(mediaTypeID)  
 );
 
 CREATE TABLE streamedOn(
-    mediaID integer REFERENCES entertainment(mediaID),
-    platformID integer REFERENCES platform(platformID),
-    dateAdded VARCHAR(1000)
+    mediaID integer -- REFERENCES entertainment(mediaID),
+    ,platformID integer --REFERENCES platform(platformID),
+    ,dateAdded VARCHAR(50),
     PRIMARY KEY(mediaID, platformID)
 );
 
 CREATE TABLE directedBy(
-    mediaID integer REFERENCES entertainment(mediaID),
-    dirID INTEGER REFERENCES director(dirID),
+    mediaID integer --REFERENCES entertainment(mediaID),
+    ,dirID INTEGER --REFERENCES director(dirID),
     primary KEY (mediaID, dirID)
 );
 
 CREATE TABLE madeIn(
-    mediaID integer REFERENCES entertainment(mediaID),
-    countryID INTEGER REFERENCES country(countryID),
+    mediaID integer  --REFERENCES entertainment(mediaID),
+    ,countryID INTEGER --REFERENCES country(countryID),
     PRIMARY KEY(mediaID, countryID)
 );
 
 CREATE TABLE castInvolved(
-    mediaID integer REFERENCES entertainment(mediaID),
-    castID INTEGER REFERENCES cast(castID),
+    mediaID integer --REFERENCES entertainment(mediaID),
+    ,castID INTEGER --REFERENCES cast(castID),
     PRIMARY KEY(mediaID, castID)
 );
 
 CREATE TABLE mediaGenre(
-    mediaID integer REFERENCES entertainment(mediaID),
-    genreID INTEGER REFERENCES genre(genreID),
+    mediaID  integer --REFERENCES entertainment(mediaID),
+    ,genreID INTEGER --REFERENCES genre(genreID),
     PRIMARY KEY(mediaID, genreID)
 );
 
@@ -102,5 +102,5 @@ INSERT INTO platform (platformName) VALUES ('Amazon Prime');
 INSERT INTO platform (platformName) VALUES ('Disney Plus');
 INSERT INTO platform (platformName) VALUES ('Hulu');
 
-SELECT * from mediaType;
+SELECT * from entertainment;
 
