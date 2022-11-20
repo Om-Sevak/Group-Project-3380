@@ -1,58 +1,21 @@
 import java.io.BufferedReader;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
-import java.text.DecimalFormat;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Properties;
 
-public class PopulatingData {
+
+public class PopulateDB {
     private static Connection connection;
 
 // Connect to your database.
 // Replace server name, username, and password with your credentials
-public static void main(String[] args) {
-
-    Properties prop = new Properties();
-    String fileName = "auth.cfg";
-    try {
-    FileInputStream configFile = new FileInputStream(fileName);
-    prop.load(configFile);
-    configFile.close();
-    } catch (FileNotFoundException ex) {
-    System.out.println("Could not find config file.");
-    System.exit(1);
-    } catch (IOException ex) {
-    System.out.println("Error reading config file.");
-    System.exit(1);
-    }
-    String username = (prop.getProperty("username"));
-    String password = (prop.getProperty("password"));
-
-    if (username == null || password == null){
-    System.out.println("Username or password not provided.");
-    System.exit(1);
-    }
-
-    String connectionUrl =
-    "jdbc:sqlserver://uranium.cs.umanitoba.ca:1433;"
-    + "database=cs3380;"
-    + "user=" + username + ";"
-    + "password="+ password +";"
-    + "encrypt=false;"
-    + "trustServerCertificate=false;"
-    + "loginTimeout=30;";
-
-    try {
-        connection = DriverManager.getConnection(connectionUrl);
+public PopulateDB(Connection connection){
+    PopulateDB.connection = connection;
+}
+public void populate(){
+   
         long startime = System.currentTimeMillis();
 
         System.out.println("GOOD THINGS TAKE TIME...");
@@ -70,15 +33,8 @@ public static void main(String[] args) {
         populateMediaGenre("C:\\Users\\Om's pc\\Documents\\GitHub\\Group-Project-3380\\DatabaseFiles\\MediaGenre.csv");
 
         long endtime = System.currentTimeMillis();
-        float msec = endtime - startime;
-        float sec = msec / 5000;
-        float min = sec / 60;
-        System.out.println("Time taken to populate database: " + min + " minutes");
-    }
-    catch (SQLException e) {
-        e.printStackTrace();
-    }
-
+        long secs = (endtime - startime)/1000;
+        System.out.println("It took " + secs + " seconds to populate the database.");
 }
 
 public static void populateEntertainment(String filName){
