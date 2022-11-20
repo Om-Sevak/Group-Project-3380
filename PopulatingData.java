@@ -49,8 +49,6 @@ public static void main(String[] args) {
     + "trustServerCertificate=false;"
     + "loginTimeout=30;";
 
-  
-
     try (Connection connection = DriverManager.getConnection(connectionUrl);) {
         readCSV("D:\\Uni\\3rd year\\3380\\GroupProject\\Entertainment-Medium.csv", connection);
     }
