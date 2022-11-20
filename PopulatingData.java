@@ -9,11 +9,13 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
 public class PopulatingData {
+    private static Connection connection;
 
 // Connect to your database.
 // Replace server name, username, and password with your credentials
@@ -49,8 +51,29 @@ public static void main(String[] args) {
     + "trustServerCertificate=false;"
     + "loginTimeout=30;";
 
-    try (Connection connection = DriverManager.getConnection(connectionUrl);) {
-        readCSV("D:\\Uni\\3rd year\\3380\\GroupProject\\Entertainment-Medium.csv", connection);
+    try {
+        connection = DriverManager.getConnection(connectionUrl);
+        long startime = System.currentTimeMillis();
+
+        System.out.println("GOOD THINGS TAKE TIME...");
+
+        populateEntertainment("C:\\Users\\Om's pc\\Documents\\GitHub\\Group-Project-3380\\DatabaseFiles\\Entertainment.csv");
+        populateCast("C:\\Users\\Om's pc\\Documents\\GitHub\\Group-Project-3380\\DatabaseFiles\\Cast.csv");
+        populateDirectors("C:\\Users\\Om's pc\\Documents\\GitHub\\Group-Project-3380\\DatabaseFiles\\Director.csv");
+        populateCountry("C:\\Users\\Om's pc\\Documents\\GitHub\\Group-Project-3380\\DatabaseFiles\\Country.csv");
+        populateGenre("C:\\Users\\Om's pc\\Documents\\GitHub\\Group-Project-3380\\DatabaseFiles\\Genre.csv");
+        populateIsA("C:\\Users\\Om's pc\\Documents\\GitHub\\Group-Project-3380\\DatabaseFiles\\IsA.csv");
+        populateStreamedOn("C:\\Users\\Om's pc\\Documents\\GitHub\\Group-Project-3380\\DatabaseFiles\\StreamedOn.csv");
+        populateDirectedBy("C:\\Users\\Om's pc\\Documents\\GitHub\\Group-Project-3380\\DatabaseFiles\\DirectedBy.csv");
+        populateMadeIn("C:\\Users\\Om's pc\\Documents\\GitHub\\Group-Project-3380\\DatabaseFiles\\MadeIn.csv");
+        populateCastInvolved("C:\\Users\\Om's pc\\Documents\\GitHub\\Group-Project-3380\\DatabaseFiles\\CastInvolved.csv");
+        populateMediaGenre("C:\\Users\\Om's pc\\Documents\\GitHub\\Group-Project-3380\\DatabaseFiles\\MediaGenre.csv");
+
+        long endtime = System.currentTimeMillis();
+        float msec = endtime - startime;
+        float sec = msec / 5000;
+        float min = sec / 60;
+        System.out.println("Time taken to populate database: " + min + " minutes");
     }
     catch (SQLException e) {
         e.printStackTrace();
@@ -58,450 +81,794 @@ public static void main(String[] args) {
 
 }
 
-public static void readCSV(String fileName, Connection connection) {
-
-    // reading the csv file
-    int corruptedEntry = 0;
-    int redundantEntry = 0;
-    int count = 0;
-
-    try {
-        BufferedReader reader = new BufferedReader(new FileReader(fileName));
-        String lineString = reader.readLine();
-        while ((lineString = reader.readLine()) != null) {
-            System.out.println(++count);
-            try {
-                String[] line = lineString.split(",");
-                String type = line[0];
-                String title = line[1];
-                String date = line[2];
-                String releaseYear = line[3];
-                String rated = line[4];
-                String duration = line[5];
-                String IMDB = line[6];
-                String rotten = line[7];
-                String platform = line[8];
-                boolean flag = true;
-                String cleanedData = "";
-                int j;
-                int mediaID ;
-                boolean isMediaDuplicate = false;
-
-                String description = "";
-                for (j = 9; j < line.length && flag; j++) {
-                    if (line[j].equals("|")) {
-                        flag = false;
-                    } else {
-                        if (j == line.length - 1) {
-                            description += line[j];
-                        } else {
-                            description += line[j] + ",";
-                        }
-                    }
-                }
-               
-                mediaID = checkDuplicate("mediaID", "mediaName", "entertainment", title, connection);
-                try{
-                //entering data in entertainment table and getting mediaID
-                    if(mediaID == -1){
-                        mediaID = addMedia(title, releaseYear, rated, rotten, IMDB, duration, description, connection);
-                        addIsA(mediaID, type, connection);
-                        addStreamedOn(mediaID, platform, date, connection);
-                    } else {
-                        isMediaDuplicate = true;
-                        addStreamedOn(mediaID, platform, date, connection);
-                    }
-                }catch(SQLException e){
-                    //do nothing
-                }
-
-              
-                int temp;
-                flag = true;
-                for (j = j; j < line.length && flag; j++) {
-                    
-                    if (line[j].equals("|")) {
-                        flag = false;
-                    } else {
-                        try{
-                            if(!(line[j].equals(""))){
-                                cleanedData = cleanData(line[j]);
-                                temp = checkDuplicate("dirID", "dirName", "director", cleanedData, connection);
-                                if(temp == -1){
-                                    temp = addDirector(cleanedData, connection);
-                                } else{
-                                    redundantEntry++;
-                                }
-                                if(!isMediaDuplicate){
-                                    addDirectedBy(mediaID, temp, connection);
-                                }
-                            }
-                        }catch (SQLException e){
-                            e.printStackTrace();
-                        }
-                    }
-                } 
-                flag = true;
-                
-                while (j < line.length && flag) {
-                    if (line[j].equals("|")) {
-                        flag = false;
-                    } else {
-                        try{
-                            if(!(line[j].equals(""))){
-                                cleanedData = cleanData(line[j]);
-                                temp = checkDuplicate("castID", "castName", "cast", cleanedData, connection);
-                                if(temp == -1){
-                                    temp = addCast(cleanedData, connection);
-                                } else{
-                                    redundantEntry++;
-                                }
-                                if(!isMediaDuplicate){
-                                    addCastInvolved(mediaID, temp, connection);
-                                }
-                            }
-                        }catch (SQLException e){
-                            e.printStackTrace();
-                        }
-                    }
-                    j++;
-                }
-    
-                flag = true;
-                while (j < line.length && flag) {
-                    if (line[j].equals("|")) {
-                        flag = false;
-                    } else {
-                        try{
-                            if(!(line[j].equals(""))){
-                                cleanedData = cleanData(line[j]);
-                                temp = checkDuplicate("countryID", "countryName", "country", cleanedData, connection);
-                                if(temp == -1){
-                                    temp = addCountry(cleanedData, connection);
-                                } else{
-                                    redundantEntry++;
-                                }
-                                if(!isMediaDuplicate){
-                                    addMadeIn(mediaID, temp, connection);
-                                }
-                            }
-                        }catch (SQLException e){
-                           e.printStackTrace();
-                        }
-                    }
-                    j++;
-                }
-              
-                flag = true;
-                for (j = j; j < line.length && flag; j++) {
-                    if (line[j].equals("|")) {
-                        flag = false;
-                    } else {
-                        try{
-                            if(!(line[j].equals(""))){
-                                cleanedData = cleanData(line[j]);
-                                temp = checkDuplicate("genreID", "genreName", "genre", cleanedData, connection);
-                                if(temp == -1){
-                                    temp = addGenre(cleanedData, connection);
-                                } else{
-                                    redundantEntry++;
-                                }
-                               if(!isMediaDuplicate){
-                                    addMediaGenre(mediaID,temp, connection);
-                                }
-                            }
-                        }catch (SQLException e){
-                            e.printStackTrace();
-                        }
-                    }
-                }
-                     
-            } catch (ArrayIndexOutOfBoundsException e) {
-                System.out.println("Error Corrupted Data: Bypassing corrupted row");
-                corruptedEntry++;
-            } 
-
-
-        }
-        
-        //printing director table
-        System.out.println("Director Table");
-        String query = "SELECT * FROM director order by dirID";
-        PreparedStatement statement = connection.prepareStatement(query);
-        ResultSet rs = statement.executeQuery();
-        while(rs.next()){
-            System.out.println(rs.getInt("dirID") + " " + rs.getString("dirName"));
-        }
-
-      
-    } catch (IOException e) {
-        e.printStackTrace();
-    } catch (SQLException e) {
-        e.printStackTrace();
-    }
+public static void populateEntertainment(String filName){
+    int corruptedRows = 0;
+    int totalRowInserted = 0;
+    boolean isLastLine = false;
+    try{
    
-    System.out.println("Number of corrupted rows bypassed: " + corruptedEntry);
-    System.out.println("Number of redundant elements bypassed: " + redundantEntry);
+    BufferedReader reader = new BufferedReader(new FileReader(filName));
+    String lineString = reader.readLine();
+    
+    String query = "Insert into entertainment(mediaID, mediaName, releaseYear, rated, duration, IMDB, rottenTomatoes, mediaDescription) values(?,?,?,?,?,?,?,?)";
+    PreparedStatement statement =  connection.prepareStatement(query);
+
+    int batchTracker = 0;
+
+    System.out.println("Populating Entertainment table...");
+    while(!isLastLine){
+        isLastLine = (lineString = reader.readLine()) == null;
+        if(!isLastLine){
+            try{
+                String[] line = lineString.split(",");
+                if(!(line[0].equals(""))){
+                    statement.setInt(1, Integer.parseInt(line[0]));
+                }
+                else{
+                    statement.setNull(1, java.sql.Types.INTEGER);
+                }
+
+                if(!(line[1].equals(""))){
+                    statement.setString(2, line[1]);
+                }
+                else{
+                    statement.setNull(2, java.sql.Types.VARCHAR);
+                }
+            
+                if(!(line[2].equals(""))){
+                    statement.setInt(3, Integer.parseInt(cleanString(line[2])));
+                }
+                else{
+                    statement.setNull(3, java.sql.Types.INTEGER);
+                }
+                
+                if(!(line[3].equals(""))){
+                    statement.setString(4, line[3]);
+                }
+                else{
+                    statement.setNull(4, java.sql.Types.VARCHAR);
+                }
+
+                if(!(line[4].equals(""))){
+                    statement.setInt(5, Integer.parseInt(cleanString(line[4])));
+                }
+                else{
+                    statement.setNull(5, java.sql.Types.INTEGER);
+                }
+                
+                if(!(line[5].equals(""))){
+                    statement.setFloat(6, Float.parseFloat(cleanString(line[5])));
+                }
+                else{
+                    statement.setNull(6, java.sql.Types.DOUBLE);
+                }
+            
+                if(!(line[6].equals(""))){
+                    statement.setInt(7, Integer.parseInt(cleanString(line[6])));
+                }
+                else{
+                    statement.setNull(7, java.sql.Types.DOUBLE);
+                }
+            
+                if(!(line[7].equals(""))){
+                    statement.setString(8, line[7]);
+                }
+                else{
+                    statement.setNull(8, java.sql.Types.VARCHAR);
+                }
+                
+                statement.addBatch();
+                batchTracker++;
+                totalRowInserted++;
+            }catch(Exception e){
+            corruptedRows++;
+            }
+        }
+        try{
+            if(batchTracker == 5000 || isLastLine){
+                statement.executeBatch();
+                batchTracker = 0;
+            }
+        }catch(SQLException e){
+           // e.printStackTrace();
+            batchTracker = 0;
+        }
+    }
+    } catch (IOException e){
+        e.printStackTrace();
+    } catch (SQLException e){
+        //e.printStackTrace();
+    }
+
+    System.out.println("Completed populating entertainment table.");
+    System.out.println("Total rows inserted: " + totalRowInserted);
+    System.out.println("Total corrupted rows bypassed: " + corruptedRows);
 
 }
 
-
-    public static int addDirector( String directorName, Connection connection) throws SQLException
-    {
-        
-       
-        int dirID = 0;
-        String insertQuery = "Insert Into director (dirName) Values (?);";
-        PreparedStatement statement = connection.prepareStatement(insertQuery, Statement.RETURN_GENERATED_KEYS);
-        statement.setString(1, directorName);
-        statement.executeUpdate();
-        ResultSet rs = statement.getGeneratedKeys();
-        if (rs.next()) {
-            dirID = rs.getInt(1);
-        }
-        statement.close();
-       
-        
-        return dirID;
-    }
-
-    public static int addCountry( String countryName, Connection connection) throws SQLException
-    {
+public static void populateCast(String fileName){
     
-       
-        int countryID = 0;
-        String insertQuery = "Insert Into country (countryName) Values (?);";
-        PreparedStatement statement = connection.prepareStatement(insertQuery, Statement.RETURN_GENERATED_KEYS);
-        statement.setString(1, countryName);
-        statement.executeUpdate();
-        ResultSet rs = statement.getGeneratedKeys();
-        if (rs.next()) {
-            countryID = rs.getInt(1);
-        }
-        statement.close();
-       
-        
-        return countryID;
-
-    }
-
-    public static int addGenre( String genreName, Connection connection) throws SQLException
-    {
-       
-        int genreID = 0;
-        String insertQuery = "Insert Into genre (genreName) Values (?);";
-        PreparedStatement statement = connection.prepareStatement(insertQuery, Statement.RETURN_GENERATED_KEYS);
-        statement.setString(1, genreName);
-        statement.executeUpdate();
-        ResultSet rs = statement.getGeneratedKeys();
-        if (rs.next()) {
-            genreID = rs.getInt(1);
-        }
-        statement.close();
-        
-        return genreID;
-    }
-
-    public static int addCast( String castName, Connection connection) throws SQLException
-    {
+    int corruptedRows = 0;
+    int totalRowInserted = 0;
+    boolean isLastLine = false;
+    try{
+   
+    BufferedReader reader = new BufferedReader(new FileReader(fileName));
+    String lineString = reader.readLine();
     
-        int castID = 0;
-        String insertQuery = "Insert Into cast (castName) Values (?);";
-        PreparedStatement statement = connection.prepareStatement(insertQuery, Statement.RETURN_GENERATED_KEYS);
-        statement.setString(1, castName);
-        statement.executeUpdate();
-        ResultSet rs = statement.getGeneratedKeys();
-        if(rs.next()){
-            castID = rs.getInt(1);
+    String query = "Insert into cast(castID, castName) values(?,?)";
+    PreparedStatement statement =  connection.prepareStatement(query);
+
+    int batchTracker = 0;
+
+    System.out.println("Populating Cast table...");
+    
+    while(!isLastLine){
+        isLastLine = (lineString = reader.readLine()) == null;
+        if(!isLastLine){
+            try{
+            
+                String[] line = lineString.split(",");
+                if(!(line[0].equals(""))){
+                    statement.setInt(1, Integer.parseInt(line[0]));
+                }
+                else{
+                    statement.setNull(1, java.sql.Types.INTEGER);
+                }
+
+                if(!(line[1].equals(""))){
+                    statement.setString(2, line[1]);
+                }
+                else{
+                    statement.setNull(2, java.sql.Types.VARCHAR);
+                }
+            
+                statement.addBatch();
+                batchTracker++;
+                totalRowInserted++;
+            }catch(Exception e){
+                //System.out.println("Error in line: " + lineString);
+            corruptedRows++;
+            }
         }
-        statement.close();
-        
-        
-        return castID;
-    }
-
-    public static int addMedia(String mediaName, String releaseYear, String rated, String rottenTomatoes, String IMDB, String duration, String mediaDescription, Connection connection) throws SQLException {
-       
-       
-        int mediaID = -1;
-        String inserQuery = "Insert Into entertainment (mediaName, releaseYear, rated, rottenTomatoes, IMDB, duration, mediaDescription) Values (?,?,?,?,?,?,?);";
-        PreparedStatement statement = connection.prepareStatement(inserQuery, Statement.RETURN_GENERATED_KEYS);
-        statement.setString(1, mediaName);
-        statement.setString(2, releaseYear);
-        statement.setString(3, rated);
-        statement.setString(4, rottenTomatoes);
-        statement.setString(5, IMDB);
-        statement.setString(6, duration);
-        statement.setString(7, mediaDescription);
-        statement.executeUpdate();
-        ResultSet rs = statement.getGeneratedKeys();
-        if (rs.next()) {
-            mediaID = rs.getInt(1);
+        try{
+            if(batchTracker == 5000 || isLastLine){
+                statement.executeBatch();
+                batchTracker = 0;
+            }
+        }catch(SQLException e){
+           // e.printStackTrace();
+            batchTracker = 0;
         }
-        statement.close();
-       
-        
-        return mediaID;
+    }
+    } catch (IOException e){
+        e.printStackTrace();
+    } catch (SQLException e){
+        //e.printStackTrace();
     }
 
-    public static void addIsA(int mediaID, String type, Connection connection) throws SQLException
-    {
-       // disableForeignKeyChecks("isA","mediaID",connection);
-       
-        int typeID ;
+    System.out.println("Completed populating cast table.");
+    System.out.println("Total rows inserted: " + totalRowInserted);
+    System.out.println("Total corrupted rows bypassed: " + corruptedRows);
+
+}
+
+public static void populateDirectors(String fileName){
         
-        if(type.equals("Movie")){
-            typeID = 1;
-        } else{
-            typeID = 2;
+        int corruptedRows = 0;
+        int totalRowInserted = 0;
+        boolean isLastLine = false;
+    
+        try{
+    
+        BufferedReader reader = new BufferedReader(new FileReader(fileName));
+        String lineString = reader.readLine();
+        
+        String query = "Insert into director(dirID, dirName) values(?,?)";
+        PreparedStatement statement =  connection.prepareStatement(query);
+    
+        int batchTracker = 0;
+    
+        System.out.println("Populating Directors table...");
+        
+        while(!isLastLine){
+            isLastLine = (lineString = reader.readLine()) == null;
+            if(!isLastLine){
+                try{
+                
+                    String[] line = lineString.split(",");
+                    if(!(line[0].equals(""))){
+                        statement.setInt(1, Integer.parseInt(line[0]));
+                    }
+                    else{
+                        statement.setNull(1, java.sql.Types.INTEGER);
+                    }
+        
+                    if(!(line[1].equals(""))){
+                        statement.setString(2, line[1]);
+                    }
+                    else{
+                        statement.setNull(2, java.sql.Types.VARCHAR);
+                    }
+                
+                    statement.addBatch();
+                    batchTracker++;
+                    totalRowInserted++;
+                }catch(Exception e){
+                    //System.out.println("Error in line: " + lineString);
+                    corruptedRows++;
+                }
         }
-
-        String insertQuery = "Insert Into isA (mediaID, mediaTypeID) Values (?,?);";
-        PreparedStatement statement = connection.prepareStatement(insertQuery);
-        statement.setInt(1, mediaID);
-        statement.setInt(2, typeID);
-        statement.executeUpdate();
-        statement.close();
-       // enableForeignKeyChecks("isA","mediaID",connection);
-        
-    }
-
-    public static void addStreamedOn(int mediaID, String streamingService, String dateAdded, Connection connection) throws SQLException
-    {
-        //disableForeignKeyChecks("streamedOn","mediaID",connection);
-       
-        int streamingServiceID = Integer.parseInt(streamingService);
-        String insertQuery = "Insert Into streamedOn (mediaID, platformID, dateAdded) Values (?,?,?);";
-        PreparedStatement statement = connection.prepareStatement(insertQuery);
-        statement.setInt(1, mediaID);
-        statement.setInt(2, streamingServiceID);
-        statement.setString(3, dateAdded);
-        statement.executeUpdate();
-        statement.close();
-       // enableForeignKeyChecks("streamedOn","mediaID",connection);
-        
-    }
-
-    public static void addDirectedBy(int mediaID, int directorID, Connection connection) throws SQLException
-    {
-       // disableForeignKeyChecks("directedBy","mediaID",connection);
-       
-        String insertQuery = "Insert Into directedBy (mediaID, dirID) Values (?,?);";
-        PreparedStatement statement = connection.prepareStatement(insertQuery);
-        statement.setInt(1, mediaID);
-        statement.setInt(2, directorID);
-        statement.executeUpdate();
-        statement.close();
-       // enableForeignKeyChecks("directedBy","mediaID",connection);
-        
-    }
-
-    public static void addCastInvolved(int mediaID, int castID, Connection connection) throws SQLException
-    {
-       // disableForeignKeyChecks("castInvolved","mediaID",connection);
-       
-        String insertQuery = "Insert Into castInvolved (mediaID, castID) Values (?,?);";
-        PreparedStatement statement = connection.prepareStatement(insertQuery);
-        statement.setInt(1, mediaID);
-        statement.setInt(2, castID);
-        statement.executeUpdate();
-        statement.close();
-       // enableForeignKeyChecks("castInvolved","mediaID",connection);
-        
-    }
-
-    public static void addMediaGenre(int mediaID, int genreID, Connection connection) throws SQLException
-    {
-        //disableForeignKeyChecks("mediaGenre","mediaID",connection);
-       
-        String insertQuery = "Insert Into mediaGenre (mediaID, genreID) Values (?,?);";
-        PreparedStatement statement = connection.prepareStatement(insertQuery);
-        statement.setInt(1, mediaID);
-        statement.setInt(2, genreID);
-        statement.executeUpdate();
-        statement.close();
-       // enableForeignKeyChecks("mediaGenre","mediaID",connection);
-        
-    }
-
-    public static void addMadeIn(int mediaID, int countryID, Connection connection) throws SQLException
-    {
-        //disableForeignKeyChecks("madeIn","mediaID",connection);
-       
-        String insertQuery = "Insert Into madeIn (mediaID, countryID) Values (?,?);";
-        PreparedStatement statement = connection.prepareStatement(insertQuery);
-        statement.setInt(1, mediaID);
-        statement.setInt(2, countryID);
-        statement.executeUpdate();
-        statement.close();
-        // enableForeignKeyChecks("madeIn","countryID",connection);
-        
-    }
-
-
-    public static String cleanData(String data){
-        if(data.charAt(0) == '"'){
-            data = data.substring(1);
+            try{
+                if(batchTracker == 5000 || isLastLine){
+                    statement.executeBatch();
+                    batchTracker = 0;
+                }
+            }catch(SQLException e){
+                 e.printStackTrace();
+                batchTracker = 0;
+            }
         }
-
-        if(data.length() > 0 && data.charAt(data.length()-1) == '"'){
-            data = data.substring(0, data.length()-1);
+        } catch (IOException e){
+            e.printStackTrace();
+        } catch (SQLException e){
+            //e.printStackTrace();
         }
+    
+        System.out.println("Completed populating director table.");
+        System.out.println("Total rows inserted: " + totalRowInserted);
+        System.out.println("Total corrupted rows bypassed: " + corruptedRows);
+    
+}
 
-        return data.trim();
-    }
+public static void populateCountry(String fileName){
+        
+        int corruptedRows = 0;
+        int totalRowInserted = 0;
+        boolean isLastLine = false;
+        try{
+    
+        BufferedReader reader = new BufferedReader(new FileReader(fileName));
+        String lineString = reader.readLine();
+        
+        String query = "Insert into country(countryID, countryName) values(?,?)";
+        PreparedStatement statement =  connection.prepareStatement(query);
+    
+        int batchTracker = 0;
+    
+        System.out.println("Populating Country table...");
 
-    //make a function to check if the data is already in the database and return the id of the data else return -1
-    public static int checkDuplicate(String coloumnID, String coloumnName, String table, String value, Connection connection) throws SQLException
-    {
-        int dirID = -1;
-        String selectQuery = "Select " + coloumnID +"  From "+ table + " Where " + coloumnName + " = ?;";
-        PreparedStatement statement = connection.prepareStatement(selectQuery);
-        statement.setString(1, value);
-        ResultSet rs = statement.executeQuery();
-        if(rs.next()){
-            dirID = rs.getInt(1);
+        while(!isLastLine){
+            isLastLine = (lineString = reader.readLine()) == null;
+            if(!isLastLine){
+                try{
+                
+                    String[] line = lineString.split(",");
+                    if(!(line[0].equals(""))){
+                        statement.setInt(1, Integer.parseInt(line[0]));
+                    }
+                    else{
+                        statement.setNull(1, java.sql.Types.INTEGER);
+                    }
+    
+                    if(!(line[1].equals(""))){
+                        statement.setString(2, line[1]);
+                    }
+                    else{
+                        statement.setNull(2, java.sql.Types.VARCHAR);
+                    }
+                
+                    statement.addBatch();
+                    batchTracker++;
+                    totalRowInserted++;
+                }catch(Exception e){
+                    //System.out.println("Error in line: " + lineString);
+                    corruptedRows++;
+                    e.printStackTrace();
+                }
+            }
+            try{
+                if(batchTracker == 100 || isLastLine){
+                    statement.executeBatch();
+                    batchTracker = 0;
+                }
+            }catch(SQLException e){
+             e.printStackTrace();
+                batchTracker = 0;
+            }
         }
-        statement.close();
-        return dirID;
+        } catch (IOException e){
+            e.printStackTrace();
+        } catch (SQLException e){
+            e.printStackTrace();
+        }
+    
+        System.out.println("Completed populating country table.");
+        System.out.println("Total rows inserted: " + totalRowInserted);
+        System.out.println("Total corrupted rows bypassed: " + corruptedRows);
+    
+}
+
+public static void populateGenre(String fileName){
+            
+    int corruptedRows = 0;
+    int totalRowInserted = 0;
+    boolean isLastLine = false;
+
+    try{
+
+    BufferedReader reader = new BufferedReader(new FileReader(fileName));
+    String lineString = reader.readLine();
+    
+    String query = "Insert into genre(genreID, genreName) values(?,?)";
+    PreparedStatement statement =  connection.prepareStatement(query);
+
+    int batchTracker = 0;
+
+    System.out.println("Populating Genre table...");
+   
+    while(!isLastLine){
+        isLastLine = (lineString = reader.readLine()) == null;
+        if(!isLastLine){
+            try{
+            
+                String[] line = lineString.split(",");
+                if(!(line[0].equals(""))){
+                    statement.setInt(1, Integer.parseInt(line[0]));
+                }
+                else{
+                    statement.setNull(1, java.sql.Types.INTEGER);
+                }
+
+                if(!(line[1].equals(""))){
+                    statement.setString(2, line[1]);
+                }
+                else{
+                    statement.setNull(2, java.sql.Types.VARCHAR);
+                }
+            
+                statement.addBatch();
+                batchTracker++;
+                totalRowInserted++;
+            }catch(Exception e){
+                //System.out.println("Error in line: " + lineString);
+                corruptedRows++;
+            }
+        }
+        try{
+            if(batchTracker == 100 || isLastLine){
+                statement.executeBatch();
+                batchTracker = 0;
+            }
+        }catch(SQLException e){
+            //e.printStackTrace();
+            batchTracker = 0;
+        }
+    }
+    } catch (IOException e){
+        e.printStackTrace();
+    } catch (SQLException e){
+        //e.printStackTrace();
     }
 
-    //function disabling foreign key checks
-    public static void disableForeignKeyChecks(String table, String fkName, Connection connection) throws SQLException
-    {
-        String disableQuery = "ALTER TABLE " + table + " NOCHECK CONSTRAINT " +fkName +";";
-        PreparedStatement statement = connection.prepareStatement(disableQuery);
-        statement.executeUpdate();
-        statement.close();
+    System.out.println("Completed populating genre table.");
+    System.out.println("Total rows inserted: " + totalRowInserted);
+    System.out.println("Total corrupted rows bypassed: " + corruptedRows);
+        
+}
 
+public static void populateIsA(String fileName){
+        
+        int corruptedRows = 0;
+        int totalRowInserted = 0;
+        boolean isLastLine = false;
+    
+        try{
+    
+        BufferedReader reader = new BufferedReader(new FileReader(fileName));
+        String lineString = reader.readLine();
+        
+        String query = "Insert into isA(mediaID, mediaTypeID) values(?,?)";
+        PreparedStatement statement =  connection.prepareStatement(query);
+    
+        int batchTracker = 0;
+    
+        System.out.println("Populating IsA table...");
+    
+        while(!isLastLine){
+            isLastLine = (lineString = reader.readLine()) == null;
+            if(!isLastLine){
+                try{
+                
+                    String[] line = lineString.split(",");
+                    if(!(line[0].equals(""))){
+                        statement.setInt(1, Integer.parseInt(line[0]));
+                    }
+                    else{
+                        statement.setNull(1, java.sql.Types.INTEGER);
+                    }
+    
+                    if(!(line[1].equals(""))){
+                        statement.setInt(2, Integer.parseInt(line[1]));
+                    }
+                    else{
+                        statement.setNull(2, java.sql.Types.INTEGER);
+                    }
+                
+                    statement.addBatch();
+                    batchTracker++;
+                    totalRowInserted++;
+                }catch(Exception e){
+                    //System.out.println("Error in line: " + lineString);
+                    corruptedRows++;
+                }
+            }
+            try{
+                if(batchTracker == 5000 || isLastLine){
+                    statement.executeBatch();
+                    batchTracker = 0;
+                }
+            }catch(SQLException e){
+                //e.printStackTrace();
+                batchTracker = 0;
+            }
+        }
+        } catch (IOException e){
+            e.printStackTrace();
+        } catch (SQLException e){
+            //e.printStackTrace();
+        }
+    
+        System.out.println("Completed populating isA table.");
+        System.out.println("Total rows inserted: " + totalRowInserted);
+        System.out.println("Total corrupted rows bypassed: " + corruptedRows);
+            
+}
+
+public static void populateStreamedOn(String fileName){
+        
+    int corruptedRows = 0;
+    int totalRowInserted = 0;
+    boolean isLastLine = false;
+
+    try{
+
+    BufferedReader reader = new BufferedReader(new FileReader(fileName));
+    String lineString = reader.readLine();
+    
+    String query = "Insert into streamedOn(mediaID, platformID, dateAdded) values(?,?,?)";
+    PreparedStatement statement =  connection.prepareStatement(query);
+
+    int batchTracker = 0;
+
+    System.out.println("Populating StreamedOn table...");
+
+    while(!isLastLine){
+        isLastLine = (lineString = reader.readLine()) == null;
+        if(!isLastLine){
+            try{
+            
+                String[] line = lineString.split(",");
+                if(!(line[0].equals(""))){
+                    statement.setInt(1, Integer.parseInt(line[0]));
+                }
+                else{
+                    statement.setNull(1, java.sql.Types.INTEGER);
+                }
+
+                if(!(line[1].equals(""))){
+                    statement.setInt(2, Integer.parseInt(line[1]));
+                }
+                else{
+                    statement.setNull(2, java.sql.Types.INTEGER);
+                }
+                if(!(line[2].equals(""))){
+                    statement.setString(3, line[2]);
+                }
+                else{
+                    statement.setNull(3, java.sql.Types.DATE);
+                }
+            
+                statement.addBatch();
+                batchTracker++;
+                totalRowInserted++;
+            }catch(Exception e){
+                //System.out.println("Error in line: " + lineString);
+                corruptedRows++;
+            }
+        }
+        try{
+            if(batchTracker == 5000 || isLastLine){
+                statement.executeBatch();
+                batchTracker = 0;
+            }
+        }catch(SQLException e){
+            //e.printStackTrace();
+            batchTracker = 0;
+        }
+    }
+    } catch (IOException e){
+        e.printStackTrace();
+    } catch (SQLException e){
+        //e.printStackTrace();
     }
 
-    //function enabling foreign key checks
-    public static void enableForeignKeyChecks(String table, String fkName, Connection connection) throws SQLException
-    {
-        String enableQuery = "Alter Table "+ table +" Check Constraint "+ fkName +";";
-        PreparedStatement statement = connection.prepareStatement(enableQuery);
-        statement.executeUpdate();
-        statement.close();
+    System.out.println("Completed populating streamedOn table.");
+    System.out.println("Total rows inserted: " + totalRowInserted);
+    System.out.println("Total corrupted rows bypassed: " + corruptedRows);
+            
+}
 
+public static void populateDirectedBy(String fileName){
+            
+    int corruptedRows = 0;
+    int totalRowInserted = 0;
+    boolean isLastLine = false;
+
+    try{
+
+    BufferedReader reader = new BufferedReader(new FileReader(fileName));
+    String lineString = reader.readLine();
+    
+    String query = "Insert into directedBy(mediaID, dirID) values(?,?)";
+    PreparedStatement statement =  connection.prepareStatement(query);
+
+    int batchTracker = 0;
+
+    System.out.println("Populating DirectedBy table...");
+
+    while(!isLastLine){
+        isLastLine = (lineString = reader.readLine()) == null;
+        if(!isLastLine){
+            try{
+                String[] line = lineString.split(",");
+                if(!(line[0].equals(""))){
+                    statement.setInt(1, Integer.parseInt(line[0]));
+                }
+                else{
+                    statement.setNull(1, java.sql.Types.INTEGER);
+                }
+
+                if(!(line[1].equals(""))){
+                    statement.setInt(2, Integer.parseInt(line[1]));
+                }
+                else{
+                    statement.setNull(2, java.sql.Types.INTEGER);
+                }
+            
+                statement.addBatch();
+                batchTracker++;
+                totalRowInserted++;
+            }catch(Exception e){
+                //System.out.println("Error in line: " + lineString);
+                corruptedRows++;
+            }
+        }
+        try{
+            if(batchTracker == 5000 || isLastLine){
+                statement.executeBatch();
+                batchTracker = 0;
+            }
+        }catch(SQLException e){
+            //e.printStackTrace();
+            batchTracker = 0;
+        }
+    }
+    } catch (IOException e){
+        e.printStackTrace();
+    } catch (SQLException e){
+        //e.printStackTrace();
     }
 
-    //function to disable triggers
-    public static void disableTriggers(Connection connection) throws SQLException
-    {
-        String disableQuery = "SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;";
-        PreparedStatement statement = connection.prepareStatement(disableQuery);
-        statement.executeUpdate();
-        statement.close();
+    System.out.println("Completed populating directedBy table.");
+    System.out.println("Total rows inserted: " + totalRowInserted);
+    System.out.println("Total corrupted rows bypassed: " + corruptedRows);
+            
+}
+
+public static void populateMadeIn(String fileName){
+            
+    int corruptedRows = 0;
+    int totalRowInserted = 0;
+    boolean isLastLine = false;
+
+    try{
+
+    BufferedReader reader = new BufferedReader(new FileReader(fileName));
+    String lineString = reader.readLine();
+    
+    String query = "Insert into madeIn(mediaID, countryID) values(?,?)";
+    PreparedStatement statement =  connection.prepareStatement(query);
+
+    int batchTracker = 0;
+
+    System.out.println("Populating MadeIn table...");
+
+    while(!isLastLine){
+        isLastLine = (lineString = reader.readLine()) == null;
+        if(!isLastLine){
+            try{
+                String[] line = lineString.split(",");
+                if(!(line[0].equals(""))){
+                    statement.setInt(1, Integer.parseInt(line[0]));
+                }
+                else{
+                    statement.setNull(1, java.sql.Types.INTEGER);
+                }
+
+                if(!(line[1].equals(""))){
+                    statement.setInt(2, Integer.parseInt(line[1]));
+                }
+                else{
+                    statement.setNull(2, java.sql.Types.INTEGER);
+                }
+            
+                statement.addBatch();
+                batchTracker++;
+                totalRowInserted++;
+            }catch(Exception e){
+                //System.out.println("Error in line: " + lineString);
+                corruptedRows++;
+            }
+        }
+        try{
+            if(batchTracker == 5000 || isLastLine){
+                statement.executeBatch();
+                batchTracker = 0;
+            }
+        }catch(SQLException e){
+            //e.printStackTrace();
+            batchTracker = 0;
+        }
+    }
+    } catch (IOException e){
+        e.printStackTrace();
+    } catch (SQLException e){
+        //e.printStackTrace();
     }
 
-    //function to enable triggers
-    public static void enableTriggers(Connection connection) throws SQLException
-    {
-        String enableQuery = "SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;";
-        PreparedStatement statement = connection.prepareStatement(enableQuery);
-        statement.executeUpdate();
-        statement.close();
+    System.out.println("Completed populating madeIn table.");
+    System.out.println("Total rows inserted: " + totalRowInserted);
+    System.out.println("Total corrupted rows bypassed: " + corruptedRows);
+            
+}
+
+public static void populateCastInvolved(String fileName){
+            
+    int corruptedRows = 0;
+    int totalRowInserted = 0;
+    boolean isLastLine = false;
+
+    try{
+
+    BufferedReader reader = new BufferedReader(new FileReader(fileName));
+    String lineString = reader.readLine();
+    
+    String query = "Insert into castInvolved(mediaID, castID) values(?,?)";
+    PreparedStatement statement =  connection.prepareStatement(query);
+
+    int batchTracker = 0;
+
+    System.out.println("Populating CastInvolved table...");
+
+    while(!isLastLine){
+        isLastLine = (lineString = reader.readLine()) == null;
+        if(!isLastLine){
+            try{
+                String[] line = lineString.split(",");
+                if(!(line[0].equals(""))){
+                    statement.setInt(1, Integer.parseInt(line[0]));
+                }
+                else{
+                    statement.setNull(1, java.sql.Types.INTEGER);
+                }
+
+                if(!(line[1].equals(""))){
+                    statement.setInt(2, Integer.parseInt(line[1]));
+                }
+                else{
+                    statement.setNull(2, java.sql.Types.INTEGER);
+                }
+            
+                statement.addBatch();
+                batchTracker++;
+                totalRowInserted++;
+            }catch(Exception e){
+                //System.out.println("Error in line: " + lineString);
+                corruptedRows++;
+            }
+        }
+        try{
+            if(batchTracker == 2000 || isLastLine){
+                statement.executeBatch();
+                batchTracker = 0;
+            }
+        }catch(SQLException e){
+            //e.printStackTrace();
+            batchTracker = 0;
+        }
     }
+    } catch (IOException e){
+        e.printStackTrace();
+    } catch (SQLException e){
+        //e.printStackTrace();
+    }
+
+    System.out.println("Completed populating castInvolved table.");
+    System.out.println("Total rows inserted: " + totalRowInserted);
+    System.out.println("Total corrupted rows bypassed: " + corruptedRows);
+            
+}
+
+public static void populateMediaGenre(String fileName){
+                
+    int corruptedRows = 0;
+    int totalRowInserted = 0;
+    boolean isLastLine = false;
+
+    try{
+
+    BufferedReader reader = new BufferedReader(new FileReader(fileName));
+    String lineString = reader.readLine();
+    
+    String query = "Insert into mediaGenre(mediaID, genreID) values(?,?)";
+    PreparedStatement statement =  connection.prepareStatement(query);
+
+    int batchTracker = 0;
+
+    System.out.println("Populating MediaGenre table...");
+
+    while(!isLastLine){
+        isLastLine = (lineString = reader.readLine()) == null;
+        if(!isLastLine){
+            try{
+                String[] line = lineString.split(",");
+                if(!(line[0].equals(""))){
+                    statement.setInt(1, Integer.parseInt(line[0]));
+                }
+                else{
+                    statement.setNull(1, java.sql.Types.INTEGER);
+                }
+
+                if(!(line[1].equals(""))){
+                    statement.setInt(2, Integer.parseInt(line[1]));
+                }
+                else{
+                    statement.setNull(2, java.sql.Types.INTEGER);
+                }
+            
+                statement.addBatch();
+                batchTracker++;
+                totalRowInserted++;
+            }catch(Exception e){
+                //System.out.println("Error in line: " + lineString);
+                corruptedRows++;
+            }
+        }
+        try{
+            if(batchTracker == 5000 || isLastLine){
+                statement.executeBatch();
+                batchTracker = 0;
+            }
+        }catch(SQLException e){
+            //e.printStackTrace();
+            batchTracker = 0;
+        }
+    }
+    } catch (IOException e){
+        e.printStackTrace();
+    } catch (SQLException e){
+        //e.printStackTrace();
+    }
+
+    System.out.println("Completed populating mediaGenre table.");
+    System.out.println("Total rows inserted: " + totalRowInserted);
+    System.out.println("Total corrupted rows bypassed: " + corruptedRows);
+            
+}
+
+public static String cleanString(String str){
+    return str.replaceAll("\"", "");
+}
 
 }
