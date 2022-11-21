@@ -1,5 +1,5 @@
 --print entertainment with directors
- SELECT * from entertainment;
+--  SELECT * from entertainment;
  --select * from cast;
  --select * from director;
  --SELECT * from country;
@@ -17,3 +17,10 @@
 --select mediaName, mediaTypeName from entertainment JOIN isA ON entertainment.mediaID = isA.mediaID JOIN mediaType ON isA.mediaTypeID = mediaType.mediaTypeID ;
 
 
+-- Entertainment streamed on three platforms
+-- SELECT mediaID, mediaName from entertainment
+-- where mediaID in (
+--     select mediaID from streamedOn
+--     group by mediaID
+--     having count(*) = 3 
+-- )
