@@ -20,17 +20,17 @@ public void populate(){
 
         System.out.println("GOOD THINGS TAKE TIME...");
 
-        populateEntertainment("C:\\Users\\Om's pc\\Documents\\GitHub\\Group-Project-3380\\DatabaseFiles\\Entertainment.csv");
-        populateCast("C:\\Users\\Om's pc\\Documents\\GitHub\\Group-Project-3380\\DatabaseFiles\\Cast.csv");
-        populateDirectors("C:\\Users\\Om's pc\\Documents\\GitHub\\Group-Project-3380\\DatabaseFiles\\Director.csv");
-        populateCountry("C:\\Users\\Om's pc\\Documents\\GitHub\\Group-Project-3380\\DatabaseFiles\\Country.csv");
-        populateGenre("C:\\Users\\Om's pc\\Documents\\GitHub\\Group-Project-3380\\DatabaseFiles\\Genre.csv");
-        populateIsA("C:\\Users\\Om's pc\\Documents\\GitHub\\Group-Project-3380\\DatabaseFiles\\IsA.csv");
-        populateStreamedOn("C:\\Users\\Om's pc\\Documents\\GitHub\\Group-Project-3380\\DatabaseFiles\\StreamedOn.csv");
-        populateDirectedBy("C:\\Users\\Om's pc\\Documents\\GitHub\\Group-Project-3380\\DatabaseFiles\\DirectedBy.csv");
-        populateMadeIn("C:\\Users\\Om's pc\\Documents\\GitHub\\Group-Project-3380\\DatabaseFiles\\MadeIn.csv");
-        populateCastInvolved("C:\\Users\\Om's pc\\Documents\\GitHub\\Group-Project-3380\\DatabaseFiles\\CastInvolved.csv");
-        populateMediaGenre("C:\\Users\\Om's pc\\Documents\\GitHub\\Group-Project-3380\\DatabaseFiles\\MediaGenre.csv");
+        populateEntertainment("DatabaseFiles\\Entertainment.csv");
+        populateCast("DatabaseFiles\\Cast.csv");
+        populateDirectors("DatabaseFiles\\Director.csv");
+        populateCountry("DatabaseFiles\\Country.csv");
+        populateGenre("DatabaseFiles\\Genre.csv");
+        populateIsA("DatabaseFiles\\IsA.csv");
+        populateStreamedOn("DatabaseFiles\\StreamedOn.csv");
+        populateDirectedBy("DatabaseFiles\\DirectedBy.csv");
+        populateMadeIn("DatabaseFiles\\MadeIn.csv");
+        populateCastInvolved("DatabaseFiles\\CastInvolved.csv");
+        populateMediaGenre("DatabaseFiles\\MediaGenre.csv");
 
         long endtime = System.currentTimeMillis();
         long secs = (endtime - startime)/1000;

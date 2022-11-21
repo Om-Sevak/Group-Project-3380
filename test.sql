@@ -15,3 +15,30 @@
 --select mediaName, countryName from entertainment JOIN madeIn ON entertainment.mediaID = madeIN.mediaID JOIN country ON madeIn.countryID = country.countryID ;
 --select mediaName, castName from entertainment JOIN castInvolved ON entertainment.mediaID = castInvolved.mediaID JOIN cast ON castInvolved.castID = cast.castID ;
 --select mediaName, mediaTypeName from entertainment JOIN isA ON entertainment.mediaID = isA.mediaID JOIN mediaType ON isA.mediaTypeID = mediaType.mediaTypeID ;
+
+
+
+
+    -- select entertainment streamed on 3 platforms.
+	-- select mediaID, mediaName
+	-- from Entertainment
+	-- where mediaId in (
+	-- 	select mediaId
+	-- 	from streamedOn
+	-- 	group by MediaId
+	-- 	having count(*) = 3
+	-- );
+
+
+    --select directors who have directed more than 10 movies
+    -- select Director.dirName , dirID
+	-- from Director
+	-- where dirId in (
+	-- 	select dirID
+    --     from directedBy
+	-- 	group by dirID
+	-- 	having count(*)>=10
+	-- );
+
+
+    
