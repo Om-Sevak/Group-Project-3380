@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import org.apache.ibatis.jdbc.ScriptRunner;
 
 
 public class PopulateDB {
@@ -11,10 +12,32 @@ public class PopulateDB {
 
 // Connect to your database.
 // Replace server name, username, and password with your credentials
-public PopulateDB(Connection connection){
-    PopulateDB.connection = connection;
+
+public static void main(String[] args) {
+    try{
+      
+        //setting up connection
+        connection = SetUPConnection.getConnection();
+        //setting up database
+        System.out.println("Initializing relational schema...");
+        ScriptRunner sc = new ScriptRunner(connection);
+        BufferedReader reader = new BufferedReader(new FileReader("relationalTable.sql"));
+        sc.setAutoCommit(true);
+        sc.setStopOnError(true);
+        sc.runScript(reader);
+       
+        reader.close();
+        //populating database
+        populate();
+    }catch(IOException e){
+        e.printStackTrace();
+    }catch (Exception e){
+        e.printStackTrace();
+    }
+
 }
-public void populate(){
+
+private static void populate(){
    
         long startime = System.currentTimeMillis();
 
@@ -37,7 +60,7 @@ public void populate(){
         System.out.println("It took " + secs + " seconds to populate the database.");
 }
 
-public static void populateEntertainment(String filName){
+private static void populateEntertainment(String filName){
     int corruptedRows = 0;
     int totalRowInserted = 0;
     boolean isLastLine = false;
@@ -126,7 +149,7 @@ public static void populateEntertainment(String filName){
                 batchTracker = 0;
             }
         }catch(SQLException e){
-           // e.printStackTrace();
+           e.printStackTrace();
             batchTracker = 0;
         }
     }
@@ -142,7 +165,7 @@ public static void populateEntertainment(String filName){
 
 }
 
-public static void populateCast(String fileName){
+private static void populateCast(String fileName){
     
     int corruptedRows = 0;
     int totalRowInserted = 0;
@@ -183,8 +206,7 @@ public static void populateCast(String fileName){
                 batchTracker++;
                 totalRowInserted++;
             }catch(Exception e){
-                //System.out.println("Error in line: " + lineString);
-            corruptedRows++;
+                corruptedRows++;
             }
         }
         try{
@@ -209,7 +231,7 @@ public static void populateCast(String fileName){
 
 }
 
-public static void populateDirectors(String fileName){
+private static void populateDirectors(String fileName){
         
         int corruptedRows = 0;
         int totalRowInserted = 0;
@@ -268,7 +290,7 @@ public static void populateDirectors(String fileName){
         } catch (IOException e){
             e.printStackTrace();
         } catch (SQLException e){
-            //e.printStackTrace();
+           //do nothing 
         }
     
         System.out.println("Completed populating director table.");
@@ -277,7 +299,7 @@ public static void populateDirectors(String fileName){
     
 }
 
-public static void populateCountry(String fileName){
+private static void populateCountry(String fileName){
         
         int corruptedRows = 0;
         int totalRowInserted = 0;
@@ -336,7 +358,7 @@ public static void populateCountry(String fileName){
         } catch (IOException e){
             e.printStackTrace();
         } catch (SQLException e){
-            e.printStackTrace();
+           //do nothing
         }
     
         System.out.println("Completed populating country table.");
@@ -345,7 +367,7 @@ public static void populateCountry(String fileName){
     
 }
 
-public static void populateGenre(String fileName){
+private static void populateGenre(String fileName){
             
     int corruptedRows = 0;
     int totalRowInserted = 0;
@@ -413,7 +435,7 @@ public static void populateGenre(String fileName){
         
 }
 
-public static void populateIsA(String fileName){
+private static void populateIsA(String fileName){
         
         int corruptedRows = 0;
         int totalRowInserted = 0;
@@ -481,7 +503,7 @@ public static void populateIsA(String fileName){
             
 }
 
-public static void populateStreamedOn(String fileName){
+private static void populateStreamedOn(String fileName){
         
     int corruptedRows = 0;
     int totalRowInserted = 0;
@@ -555,7 +577,7 @@ public static void populateStreamedOn(String fileName){
             
 }
 
-public static void populateDirectedBy(String fileName){
+private static void populateDirectedBy(String fileName){
             
     int corruptedRows = 0;
     int totalRowInserted = 0;
@@ -622,7 +644,7 @@ public static void populateDirectedBy(String fileName){
             
 }
 
-public static void populateMadeIn(String fileName){
+private static void populateMadeIn(String fileName){
             
     int corruptedRows = 0;
     int totalRowInserted = 0;
@@ -689,7 +711,7 @@ public static void populateMadeIn(String fileName){
             
 }
 
-public static void populateCastInvolved(String fileName){
+private static void populateCastInvolved(String fileName){
             
     int corruptedRows = 0;
     int totalRowInserted = 0;
@@ -756,7 +778,7 @@ public static void populateCastInvolved(String fileName){
             
 }
 
-public static void populateMediaGenre(String fileName){
+private static void populateMediaGenre(String fileName){
                 
     int corruptedRows = 0;
     int totalRowInserted = 0;
@@ -823,7 +845,7 @@ public static void populateMediaGenre(String fileName){
             
 }
 
-public static String cleanString(String str){
+private static String cleanString(String str){
     return str.replaceAll("\"", "");
 }
 
