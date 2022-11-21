@@ -1,5 +1,5 @@
 --print entertainment with directors
- --SELECT * from entertainment;
+ SELECT * from entertainment;
  --select * from cast;
  --select * from director;
  --SELECT * from country;
@@ -15,3 +15,5 @@
 -- select mediaName, countryName from entertainment JOIN madeIn ON entertainment.mediaID = madeIN.mediaID JOIN country ON madeIn.countryID = country.countryID ;
 --select mediaName, castName from entertainment JOIN castInvolved ON entertainment.mediaID = castInvolved.mediaID JOIN cast ON castInvolved.castID = cast.castID ;
 --select mediaName, mediaTypeName from entertainment JOIN isA ON entertainment.mediaID = isA.mediaID JOIN mediaType ON isA.mediaTypeID = mediaType.mediaTypeID ;
+
+

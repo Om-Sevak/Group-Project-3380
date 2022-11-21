@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.Random;
 
 
 public class PopulateDB {
@@ -40,6 +41,7 @@ public void populate(){
 public static void populateEntertainment(String filName){
     int corruptedRows = 0;
     int totalRowInserted = 0;
+    Random rd;
     boolean isLastLine = false;
     try{
    
@@ -93,14 +95,22 @@ public static void populateEntertainment(String filName){
                 }
                 
                 if(!(line[5].equals(""))){
-                    statement.setFloat(6, Float.parseFloat(cleanString(line[5])));
+
+                    rd = new Random(); 
+                    if( line[5].equals("-1"))
+                        statement.setFloat(6,(rd.nextInt(10) + rd.nextFloat()));
+                    else
+                        statement.setFloat(6, Float.parseFloat(cleanString(line[5])));
                 }
                 else{
                     statement.setNull(6, java.sql.Types.DOUBLE);
                 }
             
                 if(!(line[6].equals(""))){
-                    statement.setInt(7, Integer.parseInt(cleanString(line[6])));
+                    if( line[6].equals("-1") )    
+                        statement.setInt(7, getRandomNumber(0, 101));
+                    else
+                        statement.setInt(7, Integer.parseInt(cleanString(line[6])));
                 }
                 else{
                     statement.setNull(7, java.sql.Types.DOUBLE);
@@ -825,6 +835,10 @@ public static void populateMediaGenre(String fileName){
 
 public static String cleanString(String str){
     return str.replaceAll("\"", "");
+}
+
+public static int getRandomNumber(int min, int max) {
+    return (int) ((Math.random() * (max - min)) + min);
 }
 
 }
