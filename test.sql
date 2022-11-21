@@ -1,5 +1,5 @@
 --print entertainment with directors
- --SELECT * from entertainment;
+SELECT * from entertainment;
  --select * from cast;
  --select * from director;
  --SELECT * from country;
