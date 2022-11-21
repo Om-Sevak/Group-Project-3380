@@ -20,14 +20,14 @@
 
 
     -- select entertainment streamed on 3 platforms.
-	-- select mediaID, mediaName
-	-- from Entertainment
-	-- where mediaId in (
-	-- 	select mediaId
-	-- 	from streamedOn
-	-- 	group by MediaId
-	-- 	having count(*) = 3
-	-- );
+	select mediaID, mediaName
+	from Entertainment
+	where mediaId in (
+		select mediaId
+		from streamedOn
+		group by MediaId
+		having count(*) = 3
+	);
 
 
     --select directors who have directed more than 10 movies
