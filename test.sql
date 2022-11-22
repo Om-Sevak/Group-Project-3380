@@ -73,9 +73,33 @@
 --     from moviesInCountry 
 --     order by IMDB desc;
 
+--  Movies that were made in more than two countries
 -- SELECT entertainment.mediaID, entertainment.mediaName, COUNT(countryID) as noOfCountries FROM 
 -- entertainment join madeIn on entertainment.mediaID = madeIn.mediaID
 -- join isA on entertainment.mediaID = isA.mediaID
 -- where mediaTypeID = 1 
 -- GROUP BY entertainment.mediaName, entertainment.mediaID
 -- having COUNT(countryID)> 2;
+
+
+-- Tv-shows with (no.of) seasons
+-- Select mediaName 
+-- from entertainment join isA on entertainment.mediaId=isA.mediaID
+-- where isA.mediaTypeID=2 and entertainment.duration = 1;
+
+-- --  WHOLE DESCRIPTION ABOUT A MOVIE/TV-SHOW
+--     select DISTINCT entertainment.mediaName as Title ,entertainment.IMDB as IMDB_Rating ,entertainment.duration as Movie_Duration,
+--     entertainment.mediaDescription as Description, entertainment.releaseYear as ReleaseYear ,entertainment.rated as rating,entertainment.rottenTomatoes as rottenTomatoes,
+--     genre.genreName as Genre,country.countryName as country, director.dirName as Director, Cast.castName as casts
+    
+--     from entertainment join isA on entertainment.mediaId =isA.mediaId
+--     join mediaGenre on entertainment.mediaID = mediaGenre.mediaID
+--     join genre on mediaGenre.genreID = genre.genreID
+--     join directedBy on entertainment.mediaID = directedBy.mediaID
+--     join director on directedBy.dirID = director.dirID
+--     join castInvolved on entertainment.mediaID = castInvolved.mediaID
+--     join cast on castInvolved.castID = cast.castID
+--     join madeIn on entertainment.mediaID = madeIn.mediaID
+--     join country on madeIn.countryID = country.countryID 
+--     WHERE entertainment.mediaName like '%Naruto%';
+    
