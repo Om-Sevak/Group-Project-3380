@@ -1,4 +1,5 @@
 directorId,directorName
+0,No-Director
 1,Kirsten Johnson
 2,Julien Leclercq
 3,Mike Flanagan
@@ -10,8 +11,8 @@ directorId,directorName
 9,Kongkiat Komesiri
 10,Christian Schwochow
 11,Bruno Garotti
-12,Pedro de Echave GarcÌ?a
-13, Pablo AzorÌ?n Williams
+12,Pedro de Echave Garcï¿½?a
+13, Pablo Azorï¿½?n Williams
 14,Adam Salky
 15,Olivier Megaton
 16,K.S. Ravikumar
@@ -70,7 +71,7 @@ directorId,directorName
 69,Lijo Jose Pellissery
 70,David de Vos
 71,Luis Alfaro
-72, Javier GÌ?mez Santander
+72, Javier Gï¿½?mez Santander
 73,Sara Colangelo
 74,Stephen Herek
 75,Rahul Rawail
@@ -91,7 +92,7 @@ directorId,directorName
 90,Anthony Minghella
 91,Simon Wincer
 92,Spike Lee
-93,SebastiÌÁn Schindel
+93,Sebastiï¿½ï¿½n Schindel
 94,Steven C. Miller
 95,Richard LaGravenese
 96,Martin Campbell
@@ -132,7 +133,7 @@ directorId,directorName
 131,Peter Segal
 132,Malcolm D. Lee
 133,Ramzy Bedia
-134, Ìäric Judor
+134, ï¿½ï¿½ric Judor
 135,Sharan Koppisetty
 136,Taylor Sheridan
 137,Sachin Yardi
@@ -184,10 +185,10 @@ directorId,directorName
 183,Ferdinando Cito Filomarino
 184,Juan Carlos Medina
 185,Inma Torrente
-186,JuliÌÁn Gaviria
+186,Juliï¿½ï¿½n Gaviria
 187,Steven Yamamoto
 188,Charles Uwagbai
-189,JuliÌÁn HernÌÁndez
+189,Juliï¿½ï¿½n Hernï¿½ï¿½ndez
 190,Sam Hobkinson
 191,Vince Marcello
 192,Jonathan Teplitzky
@@ -224,7 +225,7 @@ directorId,directorName
 223,Chineze Anyaene
 224,Hsu Fu-chun
 225,Kristine Stolakis
-226,Eva MÌ?ller
+226,Eva Mï¿½?ller
 227, Michael Schmitt
 228,Brian Levant
 229,Rod Daniel
@@ -257,7 +258,7 @@ directorId,directorName
 256,Irwin Winkler
 257,Garry Marshall
 258,Kenneth Gyang
-259,Jaume BalaguerÌ?
+259,Jaume Balaguerï¿½?
 260,Najwa Najjar
 261,SelÌ¤uk Metin
 262,Keishi Otomo
@@ -324,15 +325,15 @@ directorId,directorName
 323,Roberto De Feo
 324, Paolo Strippoli
 325,Navot Papushado
-326,Manuel AlcalÌÁ
+326,Manuel Alcalï¿½ï¿½
 327,Ricardo Trogi
 328,Semi Chellas
 329,Akay Mason
 330, Abosi Ogba
 331,Viridiana Lieberman
 332,Nima Nourizadeh
-333,Daniel Rø?i€ka
-334,Juraj Êajmovi€
+333,Daniel Rï¿½ï¿½ï¿½?iï¿½ï¿½ka
+334,Juraj ï¿½ï¿½ajmoviï¿½ï¿½
 335,Femi D. Ogunsanwo
 336,Douglas Attal
 337,Kim Joo-hyung
@@ -429,12 +430,12 @@ directorId,directorName
 428,Shen Leping
 429,Matt Aselton
 430,Jose Javier Reyes
-431,Jakub Pi€Étek
+431,Jakub Piï¿½ï¿½tek
 432,John Dower
 433,B. T Thomas
 434,Andrew Dominik
 435,Nibal Arakji
-436,Sofie ÊustkovÌÁ
+436,Sofie ï¿½ï¿½ustkovï¿½ï¿½
 437,Anissa Bonnefont
 438,Bahij Hojeij
 439,Jonathan Hensleigh
@@ -442,7 +443,7 @@ directorId,directorName
 441, Vasan Bala
 442,Justin P. Lange
 443,Kimmy Gatewood
-444,TÌÊnia BallÌ?
+444,Tï¿½ï¿½nia Ballï¿½?
 445,Manolo Caro
 446,Jayme Monjardim
 447,Kingsley Ogoro
@@ -497,7 +498,7 @@ directorId,directorName
 496,Lee Kae-byeok
 497,Jayan Moodley
 498,Daniel Benmayor
-499,Alex DÌ?az
+499,Alex Dï¿½?az
 500,Helena BergstrÌ¦m
 501,Alejandro De Grazia
 502, Juan Stadler
@@ -535,7 +536,7 @@ directorId,directorName
 534,Steve Ball
 535,Dominic Sena
 536,Alan Alda
-537,Mika KaurismÌ?ki
+537,Mika Kaurismï¿½?ki
 538,Sydney Pollack
 539,Lorene Scafaria
 540,Barbra Streisand
@@ -595,7 +596,7 @@ directorId,directorName
 594,Martin Prakkat
 595,Baran bo Odar
 596,Zhang Chong
-597,Y€±lmaz Erdo€Ùan
+597,Yï¿½ï¿½lmaz Erdoï¿½ï¿½an
 598,Shantrelle P. Lewis
 599,Ivan Ayr
 600,Anthony Mandler
@@ -647,23 +648,23 @@ directorId,directorName
 646,Maria Pulera
 647,Santhosh Viswanath
 648,Seema Pahwa
-649,Ozan AÌ¤€±ktan
+649,Ozan AÌ¤ï¿½ï¿½ktan
 650,Meltem Bozoflu
-651,Hakan AlgÌ?l
+651,Hakan Algï¿½?l
 652,SelÌ¤uk Aydemir
 653, Birkan Pusa
-654,ÌĞmer Faruk Sorak
-655,?enol SÌ¦nmez
+654,ï¿½ï¿½mer Faruk Sorak
+655,ï¿½?enol SÌ¦nmez
 656,Alexis Morante
 657,Burak Aksak
-658,K€±vanÌ¤ BaruÌ¦nÌ?
+658,Kï¿½ï¿½vanÌ¤ BaruÌ¦nï¿½?
 659,Rindala Kodeih
 660,Kongkiat Khomsiri
-661,Bedran GÌ?zel
+661,Bedran Gï¿½?zel
 662,Marwan Nabil
 663,MIKIKO
 664, Daito Manabe
-665, ÌĞmer Faruk Sorak
+665, ï¿½ï¿½mer Faruk Sorak
 666,Takashi Shimizu
 667,Joe Penna
 668,Ahishor Solomon
@@ -710,7 +711,7 @@ directorId,directorName
 709,Buchi Babu Sana
 710,Fredrick Munk
 711,Moyoung Jin
-712, Caroline SÌÁ
+712, Caroline Sï¿½ï¿½
 713, Deepti Kakkar
 714, Fahad Mustafa
 715, Hikaru Toda
@@ -758,13 +759,13 @@ directorId,directorName
 757,Hanung Bramantyo
 758, Pandu Adjisurya
 759,Bashir El Deek
-760,Roman Polaãski
+760,Roman Polaï¿½ï¿½ski
 761,Nelson McCormick
 762,Mic Rodgers
 763,Shawn Rech
 764,Peyton Reed
 765,Julian Schnabel
-766,AdriÌÁn GarcÌ?a Bogliano
+766,Adriï¿½ï¿½n Garcï¿½?a Bogliano
 767,Jose Gomez
 768,Jonathon Link
 769,Blair Simmons
@@ -772,10 +773,10 @@ directorId,directorName
 771,John Hillcoat
 772,Nadine Ibrahim
 773,Roman White
-774,FermÌ?n Muguruza
+774,Fermï¿½?n Muguruza
 775,Mike Hodges
 776,Eylem Kaftan
-777,Fernando AyllÌ?n
+777,Fernando Ayllï¿½?n
 778,Umesh Bist
 779,Massimiliano Camaiti
 780,Aleksey Tsitsilin
@@ -804,16 +805,16 @@ directorId,directorName
 803,Hemambar Jasti
 804,Taylor Morden
 805,Helena Coan
-806,Muharrem GÌ?lmez
+806,Muharrem Gï¿½?lmez
 807,Dolapo Adeleke
-808,Mahsun K€±rm€±z€±gÌ?l
+808,Mahsun Kï¿½ï¿½rmï¿½ï¿½zï¿½ï¿½gï¿½?l
 809,Can Ulkay
 810,Luis Alejandro PÌ©rez
 811,Ketche
-812,Erol ÌĞzlevi
+812,Erol ï¿½ï¿½zlevi
 813,Miguel Arteta
-814,Tolga ÌĞrnek
-815,Pablo AgÌ?ero
+814,Tolga ï¿½ï¿½rnek
+815,Pablo Agï¿½?ero
 816,Mohammad Irfan Ramly
 817,Kevin McManus
 818, Matthew McManus
@@ -822,7 +823,7 @@ directorId,directorName
 821,Gitanjali Rao
 822,Halitha Shameem
 823,Carlos Moreno
-824,Maribel SÌÁnchez-Maroto
+824,Maribel Sï¿½ï¿½nchez-Maroto
 825,Fajar Bustomi
 826,Taylor Hackford
 827,Amy Poehler
@@ -844,7 +845,7 @@ directorId,directorName
 843, Ben Stassen
 844,Matt Ross
 845,Dani de la Orden
-846,Pablo LarraÌ?n
+846,Pablo Larraï¿½?n
 847,John Erick Dowdle
 848,Jesse Peretz
 849,Ribhu Dasgupta
@@ -868,14 +869,14 @@ directorId,directorName
 867,Alex Merkin
 868,Vikram Bhatt
 869,Dallas Jenkins
-870,DamiÌÁn Romay
+870,Damiï¿½ï¿½n Romay
 871,Hamisha Daryani Ahuja
 872,Hong Khaou
 873,Mario Briongos
 874,Vinay Bharadwaj
 875,Michael Fimognari
-876,Eric D. Cabello DÌ?az
-877,Clara MartÌ?nez-LÌÁzaro
+876,Eric D. Cabello Dï¿½?az
+877,Clara Martï¿½?nez-Lï¿½ï¿½zaro
 878,Monty Tiwa
 879,Ava DuVernay
 880,Alain Darborg
@@ -883,7 +884,7 @@ directorId,directorName
 882,Julien Royal
 883,Brian Baugh
 884,Henri Wong
-885,MaÌøa Sandoz
+885,Maï¿½ï¿½a Sandoz
 886,Mostofa Sarwar Farooki
 887,Joseph Hsu
 888,Sam Levinson
@@ -893,14 +894,14 @@ directorId,directorName
 892,Guo Jingming
 893,Jan Belcl
 894,Esteban Crespo
-895,NoÌ© GonzÌÁlez
+895,NoÌ© Gonzï¿½ï¿½lez
 896,Sarah Gavron
 897,Martin Scorsese
 898,Richard Arellano
 899,Jon Favreau
 900,Marco Pontecorvo
 901,Gregory Plotkin
-902,LluÌ?s QuÌ?lez
+902,Lluï¿½?s Quï¿½?lez
 903,Jude Weng
 904,Simon Stone
 905,Noviandra Santosa
@@ -939,7 +940,7 @@ directorId,directorName
 938,Juliet May
 939,Stanley Nelson
 940,Olivier Nakache
-941, Ìäric Toledano
+941, ï¿½ï¿½ric Toledano
 942,Prakash Jha
 943,Rohan Sippy
 944,Ross Venokur
@@ -947,13 +948,13 @@ directorId,directorName
 946,Maite Ruiz De Austri
 947,Jastis Arimba
 948,Eric Summer
-949, Ìäric Warin
-950,KornÌ©l MundruczÌ?
+949, ï¿½ï¿½ric Warin
+950,KornÌ©l Mundruczï¿½?
 951,Alejandro Ruax
-952, Ramiro MartÌ?nez
+952, Ramiro Martï¿½?nez
 953,Florent Bodin
 954,Sohail Khan
-955,Hallvard BrÌ?in
+955,Hallvard Brï¿½?in
 956,Jeff Tremaine
 957,Christian Alvart
 958,Robert Townsend
@@ -981,7 +982,7 @@ directorId,directorName
 980,Gore Verbinski
 981,Al Campbell
 982, Alice Mathias
-983,MaÌøwenn
+983,Maï¿½ï¿½wenn
 984,Richard Weston
 985,Vikramaditya Motwane
 986,Prime Cruz
@@ -1056,7 +1057,7 @@ directorId,directorName
 1055,Dado C. Lumibao
 1056,August Jakobsson
 1057,Anna Wieczur-Bluszcz
-1058,Damien O‰ÛªConnor
+1058,Damien Oï¿½ÛªConnor
 1059,Richard Laxton
 1060,Gil Kenan
 1061,Phil Burgers
@@ -1070,7 +1071,7 @@ directorId,directorName
 1069,Stanley Moore
 1070, Alex Woo
 1071,Oliver Bokelberg
-1072,Ìngel GÌ?mez HernÌÁndez
+1072,Ìngel Gï¿½?mez Hernï¿½ï¿½ndez
 1073,Ludovico Di Martino
 1074,Lee Chung-hyun
 1075,Barry Gonzalez
@@ -1081,7 +1082,7 @@ directorId,directorName
 1080,V Vignarajan
 1081,Greg Rankin
 1082, TJ Sullivan
-1083,Carlos SorÌ?n
+1083,Carlos Sorï¿½?n
 1084,Matt Eskandari
 1085,Grant Singer
 1086,Mohammad Adel
@@ -1153,11 +1154,11 @@ directorId,directorName
 1152,Santiago Alvarado Ilarri
 1153,Frasco Mortiz
 1154,John Whitesell
-1155,Antonio DÌ?az
-1156,NimrÌ?d Antal
+1155,Antonio Dï¿½?az
+1156,Nimrï¿½?d Antal
 1157,Bartosz M. Kowalski
 1158,James Tovell
-1159,MatÌ?as Gueilburt
+1159,Matï¿½?as Gueilburt
 1160,Natasha Lyonne
 1161,Chang Chin-jung
 1162, Chen Rong-hui
@@ -1304,7 +1305,7 @@ directorId,directorName
 1303, Amandha Wyanto
 1304,Ahmed Nader Galal
 1305,Arati Kadav
-1306,MaÌømouna DoucourÌ©
+1306,Maï¿½ï¿½mouna DoucourÌ©
 1307,Pepe Mora
 1308,Marcos Carnevale
 1309,Jeff Orlowski
@@ -1323,7 +1324,7 @@ directorId,directorName
 1322,Felix Binder
 1323,Thor Freudenthal
 1324,Nguyen Thanh Tung
-1325,Baltasar KormÌÁkur
+1325,Baltasar Kormï¿½ï¿½kur
 1326,Conrad Helten
 1327,Ayumu Watanabe
 1328,Hitoshi Namba
@@ -1343,7 +1344,7 @@ directorId,directorName
 1342,Brett Haley
 1343,Chris Roland
 1344, Maradona Dias Dos Santos
-1345,David GalÌÁn Galindo
+1345,David Galï¿½ï¿½n Galindo
 1346,David Moreton
 1347,Lester Hsi
 1348,Cyrus Nowrasteh
@@ -1374,7 +1375,7 @@ directorId,directorName
 1373,Franziska Meyer Price
 1374,Steven Rinella
 1375,Laura Terruso
-1376,MartÌ?n Sastre
+1376,Martï¿½?n Sastre
 1377,Franck Nataf
 1378,Pascal Amanfo
 1379,Savage Steve Holland
@@ -1405,7 +1406,7 @@ directorId,directorName
 1404,Tony Bancroft
 1405, Scott Christian Sava
 1406,Tope Alake
-1407,Fernando GonzÌÁlez Molina
+1407,Fernando Gonzï¿½ï¿½lez Molina
 1408,Yuki Tanada
 1409,Alex Gibney
 1410,Ahn Byoung-wook
@@ -1480,7 +1481,7 @@ directorId,directorName
 1479, Anna Migotto
 1480,Kyran Kelly
 1481,Salvador Calvo
-1482,Cem Y€±lmaz
+1482,Cem Yï¿½ï¿½lmaz
 1483,Bruce Beresford
 1484,Michael Duggan
 1485,Almudena Carracedo
@@ -1529,7 +1530,7 @@ directorId,directorName
 1528,Ayman Makram
 1529,George Gallo
 1530,Ry Russo-Young
-1531,Barbara Biaâow€És
+1531,Barbara Biaï¿½ï¿½owï¿½ï¿½s
 1532, Tomasz Mandes
 1533,Akhil Paul
 1534, Anas Khan
@@ -1538,7 +1539,7 @@ directorId,directorName
 1537,Mohamed Khan
 1538,Adriana Trigiani
 1539,Phil Sgriccia
-1540,AndaÌ¤ Haznedaro€Ùlu
+1540,AndaÌ¤ Haznedaroï¿½ï¿½lu
 1541,Murat Kepez
 1542,Greta Gerwig
 1543,Sam Rega
@@ -1561,7 +1562,7 @@ directorId,directorName
 1560,Angshuman Ghosh
 1561,Ahmed Zein
 1562,Alejandro Montiel
-1563,Fernando FrÌ?as de la Parra
+1563,Fernando Frï¿½?as de la Parra
 1564,Madeleine Parry
 1565,Yu Yang
 1566,Jesse Warn
@@ -1599,7 +1600,7 @@ directorId,directorName
 1598,Haifaa Al-Mansour
 1599,Mohammed Alhmly
 1600,Lucien Bourjeily
-1601,Laura MaÌ±ÌÁ
+1601,Laura MaÌ±ï¿½ï¿½
 1602,Sivaroj Kongsakul
 1603,Salmeen AlMurry Amer
 1604,Mohit Suri
@@ -1615,7 +1616,7 @@ directorId,directorName
 1614,Francesco Amato
 1615,Damien Chazelle
 1616, Houda Benyamina
-1617, LaÌøla Marrakchi
+1617, Laï¿½ï¿½la Marrakchi
 1618, Alan Poul
 1619,S.A. Zaidi
 1620,Hamad AlSarraf
@@ -1626,7 +1627,7 @@ directorId,directorName
 1625,Aaron Woodley
 1626,Lucas Margutti
 1627,Ashok Nanda
-1628,HernÌÁn Guerschuny
+1628,Hernï¿½ï¿½n Guerschuny
 1629,Alex Ranarivelo
 1630,Seth Barrish
 1631,Brett Hedlund
@@ -1647,12 +1648,12 @@ directorId,directorName
 1646,Chris Bolan
 1647,Omoni Oboli
 1648,Saravana Rajan
-1649, S€±rr€± SÌ?reyya ÌĞnder
+1649, Sï¿½ï¿½rrï¿½ï¿½ Sï¿½?reyya ï¿½ï¿½nder
 1650,Sermiyan Midyat
 1651,Ahmed Yousry
 1652, Hazem Fouda
-1653,Handan €¡pekÌ¤i
-1654,Ferzan ÌĞzpetek
+1653,Handan ï¿½ï¿½pekÌ¤i
+1654,Ferzan ï¿½ï¿½zpetek
 1655,Ashraf Fayeq
 1656,Paul Munger
 1657,Matei Dima
@@ -1673,8 +1674,8 @@ directorId,directorName
 1672,Kris Pearn
 1673,Ryan Polito
 1674,Anoop Sathyan
-1675,MÌ?fit Can SaÌ¤€±nt€±
-1676,CÌ?neyt Kaya
+1675,Mï¿½?fit Can SaÌ¤ï¿½ï¿½ntï¿½ï¿½
+1676,Cï¿½?neyt Kaya
 1677,Greg Barker
 1678,Leticia Jorge Romero
 1679,Adrien Lagier
@@ -1684,7 +1685,7 @@ directorId,directorName
 1683,Jon M. Chu
 1684,Diego Pignataro
 1685,Ian Edelman
-1686,Ali Yorganc€±o€Ùlu
+1686,Ali Yorgancï¿½ï¿½oï¿½ï¿½lu
 1687,Digo Ricio
 1688,Emcy Joseph
 1689,Kranthi Madhav
@@ -1748,16 +1749,16 @@ directorId,directorName
 1747,Todd Kauffman
 1748, Mark Thornton
 1749,Prentice Penny
-1750,Zsolt PÌÁlfi
+1750,Zsolt Pï¿½ï¿½lfi
 1751,Nawapol Thamrongrattanarit
 1752,Marlene Melchior
 1753,Aaron Lieber
 1754,Tamas Yvan Topolanszky
-1755,ÌÛlex Pastor
+1755,ï¿½ï¿½lex Pastor
 1756, David Pastor
 1757,Rami Hachache
 1758,Francisco Macri
-1759,Gabriela GarcÌ?a Rivas
+1759,Gabriela Garcï¿½?a Rivas
 1760,Eric Goode
 1761, Rebecca Chaiklin
 1762,Francesco Lettieri
@@ -1776,7 +1777,7 @@ directorId,directorName
 1775,Owen Trevor
 1776,Stephanie Turner
 1777,Liz Garbus
-1778,Mehmet Ada ÌĞztekin
+1778,Mehmet Ada ï¿½ï¿½ztekin
 1779,Jos Humphrey
 1780,Sharmeen Obaid-Chinoy
 1781,Toyin Abraham
@@ -1831,7 +1832,7 @@ directorId,directorName
 1830,Richard Phelan
 1831, Will Becher
 1832,Rod Cabatana Marmol
-1833,Michaâ Tylka
+1833,Michaï¿½ï¿½ Tylka
 1834,Oliver Kienle
 1835,Brian Webber
 1836,Takashi Yamazaki
@@ -1839,7 +1840,7 @@ directorId,directorName
 1838, Makoto Hanafusa
 1839,Pantham Thongsang
 1840, Cheewatan Pusitsuksa
-1841,Paul KrÌ?ger
+1841,Paul Krï¿½?ger
 1842, AnÌ©l Stolp
 1843,Benny Safdie
 1844, Josh Safdie
@@ -1906,7 +1907,7 @@ directorId,directorName
 1905,Tom Green
 1906,David Lowery
 1907,Maria Ripoll
-1908,YibrÌÁn Asuad
+1908,Yibrï¿½ï¿½n Asuad
 1909,Edwin
 1910,Vadim Jean
 1911,Mark A.Z. DippÌ©
@@ -1932,7 +1933,7 @@ directorId,directorName
 1931,Ron Oliver
 1932,Shojiro Nishimi
 1933, Guillaume Renard
-1934,Pepe BojÌ?rquez
+1934,Pepe Bojï¿½?rquez
 1935,Rhys Thomas
 1936,David M. Rosenthal
 1937,Louise Alston
@@ -2005,11 +2006,11 @@ directorId,directorName
 2004,Roger Russell
 2005,Edward Zwick
 2006,Basava Shankar Eeday
-2007,Elle-MÌÁijÌÁ Tailfeathers
+2007,Elle-Mï¿½ï¿½ijï¿½ï¿½ Tailfeathers
 2008, Kathleen Hepburn
 2009,Sanjiv Jaiswal
 2010,Marta Jaenes
-2011, Rosa MÌÁrquez
+2011, Rosa Mï¿½ï¿½rquez
 2012,Julien Abraham
 2013,Monika Mitchell
 2014,Eva Orner
@@ -2059,7 +2060,7 @@ directorId,directorName
 2058,Blayne Weaver
 2059,David MichÌ«d
 2060,Marco Bonfanti
-2061,Everardo GonzÌÁlez
+2061,Everardo Gonzï¿½ï¿½lez
 2062,Rodrigo Guardiola
 2063, Gabriel Cruz Rivas
 2064,Juani Libonatti
@@ -2079,8 +2080,8 @@ directorId,directorName
 2078,Yuen Woo-ping
 2079,Gillian Robespierre
 2080,Thomas Vinterberg
-2081,CiarÌÁn Foy
-2082,Daniel SÌÁnchez ArÌ©valo
+2081,Ciarï¿½ï¿½n Foy
+2082,Daniel Sï¿½ï¿½nchez ArÌ©valo
 2083,Don Omope
 2084,Ed Perkins
 2085,Steven Soderbergh
@@ -2089,9 +2090,9 @@ directorId,directorName
 2088,Bassam Tariq
 2089,Leslie Iwerks
 2090,Louie Psihoyos
-2091,Ahmet Kat€±ks€±z
+2091,Ahmet Katï¿½ï¿½ksï¿½ï¿½z
 2092,Jean-FranÌ¤ois Blais
-2093,LeÌøla Sy
+2093,Leï¿½ï¿½la Sy
 2094, Kery James
 2095,Vince Gilligan
 2096,Bolanle Austen-Peters
@@ -2117,7 +2118,7 @@ directorId,directorName
 2116, Norton Virgien
 2117,Danny Cannon
 2118,Mana Yasuda
-2119,Gupse ÌĞzay
+2119,Gupse ï¿½ï¿½zay
 2120,Jim Mickle
 2121,Jumpei Mizusaki
 2122, Koji Morimoto
@@ -2156,7 +2157,7 @@ directorId,directorName
 2155, Lea Glob
 2156,RÌ©my Four
 2157, Julien War
-2158,Alejandro FernÌÁndez Almendras
+2158,Alejandro Fernï¿½ï¿½ndez Almendras
 2159,Jota Linares
 2160,Wagner de Assis
 2161,White Trash Tyler
@@ -2221,7 +2222,7 @@ directorId,directorName
 2220,Marcelo Altmark
 2221, Mariano Mucci
 2222, Luis A. Scalella
-2223,HernÌÁn Zin
+2223,Hernï¿½ï¿½n Zin
 2224,Sittisiri Mongkolsiri
 2225,Robbie Grewal
 2226,Thiagarajan Kumararaja
@@ -2234,7 +2235,7 @@ directorId,directorName
 2233,Miguel Cohan
 2234, Miguel Cohan
 2235,Luis Alberto Restrepo
-2236, AndrÌ©s BeltrÌÁn
+2236, AndrÌ©s Beltrï¿½ï¿½n
 2237, Jaime Rayo
 2238,Hideaki Anno
 2239, Kazuya Tsurumaki
@@ -2247,7 +2248,7 @@ directorId,directorName
 2246, Kristine Samuelson
 2247,Sanjay Jadhav
 2248,Vinod Kapri
-2249,ElÌ?as LeÌ?n
+2249,Elï¿½?as Leï¿½?n
 2250,Kyle Newacheck
 2251,Mark Ritchie
 2252,Rocky Soraya
@@ -2282,7 +2283,7 @@ directorId,directorName
 2281,Aditya Vikram Sengupta
 2282,Mandie Fletcher
 2283,Aijaz Khan
-2284,Gonzalo LÌ?pez-Gallego
+2284,Gonzalo Lï¿½?pez-Gallego
 2285,Abby Epstein
 2286,Hepi Mita
 2287,Che Sandoval
@@ -2322,7 +2323,7 @@ directorId,directorName
 2321,Soukarya Ghosal
 2322,Leena Yadav
 2323,Amitabha Singh
-2324,Hasan Karacada€Ù
+2324,Hasan Karacadaï¿½ï¿½
 2325,Chris Nelson
 2326,Lee Kyoungmi
 2327, Yim Pilsung
@@ -2380,7 +2381,7 @@ directorId,directorName
 2379,Franck Phelizon
 2380,Peter Howitt
 2381,Chiwetel Ejiofor
-2382,Rodrigo SalomÌ?n
+2382,Rodrigo Salomï¿½?n
 2383, Pietro Scappini
 2384,Miguel Ìngel Vivas
 2385,Carlos Vermut
@@ -2409,7 +2410,7 @@ directorId,directorName
 2408,Jackie van Beek
 2409, Madeleine Sami
 2410,Sachin Kamlakar Khot
-2411,Daniel MonzÌ?n
+2411,Daniel Monzï¿½?n
 2412,Rayka Zehtabchi
 2413,Tom Stern
 2414,Kelly Duane de la Vega
@@ -2438,10 +2439,10 @@ directorId,directorName
 2437,Jerrold Tarog
 2438,Laura Alvea
 2439, JosÌ© OrtuÌ±o
-2440,GastÌ?n Duprat
+2440,Gastï¿½?n Duprat
 2441,Andy Caballero
 2442, Diego Corsini
-2443,Seren YÌ?ce
+2443,Seren Yï¿½?ce
 2444,Jonathan Helpert
 2445,AndrÌ© D'Elia
 2446,Skye Borgman
@@ -2460,7 +2461,7 @@ directorId,directorName
 2459,Kunal Kohli
 2460,Noor Imran Mithu
 2461,Nonzee Nimibutr
-2462,Ìsold UggadÌ?ttir
+2462,Ìsold Uggadï¿½?ttir
 2463,Lorena Munoz
 2464,Genevieve Nnaji
 2465,Terry Gilliam
@@ -2474,7 +2475,7 @@ directorId,directorName
 2473,Kevin Booth
 2474, David Johndrow
 2475,Paul M. Green
-2476,Julio FernÌÁndez Talamantes
+2476,Julio Fernï¿½ï¿½ndez Talamantes
 2477,Walter C. Miller
 2478,Noriyuki Abe
 2479,Ellen Brown
@@ -2507,7 +2508,7 @@ directorId,directorName
 2506,Sigrid Andrea Bernardo
 2507,Guillermo de Oliveira
 2508,Manoj Beedha
-2509,Alfonso CuarÌ?n
+2509,Alfonso Cuarï¿½?n
 2510,John Hoffman
 2511, Nanfu Wang
 2512,Marco Risi
@@ -2518,7 +2519,7 @@ directorId,directorName
 2517,Bert Marcus
 2518,Ahsan Rahim
 2519,Cheang Pou Soi
-2520,Enrique GarcÌ?a Meza
+2520,Enrique Garcï¿½?a Meza
 2521,Katarina Launing
 2522,Johnnie To
 2523,Lawrence Cheng
@@ -2537,7 +2538,7 @@ directorId,directorName
 2536,Alice Rohrwacher
 2537,Nandita Das
 2538,Romain Gavras
-2539,SebastiÌÁn Hofmann
+2539,Sebastiï¿½ï¿½n Hofmann
 2540,Denny Lu
 2541, Mike Myhre
 2542,Clay Kaytis
@@ -2559,7 +2560,7 @@ directorId,directorName
 2558,Erik Matti
 2559,Christopher Guest
 2560,Vincent Kok
-2561,Christian ZÌ?bert
+2561,Christian Zï¿½?bert
 2562,David Mackenzie
 2563,Tejas Prabha Vijay Deoskar
 2564,Matheus Souza
@@ -2597,7 +2598,7 @@ directorId,directorName
 2596,Dani de la Torre
 2597,Tinge Krishnan
 2598,Aleksey German
-2599,Sergio BarrejÌ?n
+2599,Sergio Barrejï¿½?n
 2600,Sandi Tan
 2601,Vijay Yelakanti
 2602,S.S. Rajamouli
@@ -2682,7 +2683,7 @@ directorId,directorName
 2681,Ariel Vromen
 2682,Nicole Holofcener
 2683,Alessio Cremonini
-2684,Joram LÌ?rsen
+2684,Joram Lï¿½?rsen
 2685,Madeleine Gavin
 2686,Kevin R. Adams
 2687, Joe Ksander
@@ -2704,7 +2705,7 @@ directorId,directorName
 2703,Ravi Udyawar
 2704,R. Balki
 2705,Shree Narayan Singh
-2706,Manuel MartÌ?n Cuenca
+2706,Manuel Martï¿½?n Cuenca
 2707,Susan Johnson
 2708,Y. Joon Chung
 2709,Rucha Humnabadkar
@@ -2759,15 +2760,15 @@ directorId,directorName
 2758, Jon Olb
 2759,Oded Raz
 2760,Mariana Tschudi
-2761, HÌ©ctor GÌÁlvez
-2762,RamÌ?n Salazar
+2761, HÌ©ctor Gï¿½ï¿½lvez
+2762,Ramï¿½?n Salazar
 2763,Eduardo Mendoza de Echave
 2764,Craig Johnson
 2765,Jeffrey Walker
 2766,Shadab Khan
 2767,Nattawut Poonpiriya
 2768,Felix Starck
-2769,Norberto LÌ?pez Amado
+2769,Norberto Lï¿½?pez Amado
 2770,Alex Richanbach
 2771,Tig Notaro
 2772,Brit McAdams
@@ -2795,7 +2796,7 @@ directorId,directorName
 2794, Roly Santos
 2795,Julius R. Nasso
 2796,Lucas Figueroa
-2797,Alfonso RodrÌ?guez
+2797,Alfonso Rodrï¿½?guez
 2798,Guillermo Garcia
 2799, David Cantolla
 2800,Dito Montiel
@@ -2804,7 +2805,7 @@ directorId,directorName
 2803,Teddy Lussi-Modeste
 2804,Dawn Porter
 2805,Ben Shelton
-2806,Curro VelÌÁzquez
+2806,Curro Velï¿½ï¿½zquez
 2807,Robert Smigel
 2808,Max Amini
 2809,Jason Sussberg
@@ -2827,7 +2828,7 @@ directorId,directorName
 2826,Hatem Khraiche
 2827,Derek Peck
 2828,Jennifer Morrison
-2829,HÌ¬ctor HernÌÁndez Vicens
+2829,HÌ¬ctor Hernï¿½ï¿½ndez Vicens
 2830,Kader Aoun
 2831,Abhay Chopra
 2832,Diego Lerman
@@ -2859,7 +2860,7 @@ directorId,directorName
 2858,Ben Wallis
 2859,Robin Aubert
 2860,Mitch Gould
-2861,Lars BÌ?chel
+2861,Lars Bï¿½?chel
 2862,Amit Barot
 2863,Carlo Padial
 2864,Mike Smith
@@ -2902,12 +2903,12 @@ directorId,directorName
 2901,Choi Jin-seong
 2902,Milind Rau
 2903,Craig Elrod
-2904,Jose Manuel ColÌ?n
+2904,Jose Manuel Colï¿½?n
 2905,Yasuhiro Irie
 2906,Alethea Jones
 2907,Jay Baruchel
 2908,Ludovic Bernard
-2909,NoÌÇl Wells
+2909,Noï¿½ï¿½l Wells
 2910,Patrick Brice
 2911,Daniel Kontur
 2912,Diego Kaplan
@@ -2968,10 +2969,10 @@ directorId,directorName
 2967,David France
 2968,Brandon Jones
 2969,Geun-hyun Cho
-2970,Carlos TherÌ?n
+2970,Carlos Therï¿½?n
 2971,Francesco Carrozzini
 2972,Karen J. Lloyd
-2973,Vibeke IdsÌüe
+2973,Vibeke Idsï¿½ï¿½e
 2974,Carlos Algara
 2975, Alejandro Martinez-Beltran
 2976,Jacob LaMendola
@@ -3000,9 +3001,9 @@ directorId,directorName
 2999, Mariano Cohn
 3000,Gary Wang
 3001,Raz Degan
-3002,Israel AdriÌÁn Caetano
+3002,Israel Adriï¿½ï¿½n Caetano
 3003,Mariano Cohn
-3004, GastÌ?n Duprat
+3004, Gastï¿½?n Duprat
 3005,Sarah Adina Smith
 3006,Cate Shortland
 3007,Adam Wingard
@@ -3027,7 +3028,7 @@ directorId,directorName
 3026,Kasper Collin
 3027,Fazila Allana
 3028,Eric Abrams
-3029,AgustÌ? Villaronga
+3029,Agustï¿½? Villaronga
 3030,Harry Chaskin
 3031,Marti Noxon
 3032,Stefan Brogren
@@ -3066,7 +3067,7 @@ directorId,directorName
 3065,Anita Barbosa
 3066,Ketan Mehta
 3067,Daniel Wilner
-3068,Alberto RodrÌ?guez
+3068,Alberto Rodrï¿½?guez
 3069,Joe Piscatella
 3070,Rahul Dholakia
 3071,Jean-Patrick Benes
@@ -3124,7 +3125,7 @@ directorId,directorName
 3123,A. Salaam
 3124,Eduardo Casanova
 3125,Daniel Burman
-3126,Kike MaÌ?llo
+3126,Kike Maï¿½?llo
 3127,Laurent Bouzereau
 3128,Gordon Anderson
 3129,Charlie McDowell
@@ -3151,17 +3152,17 @@ directorId,directorName
 3150,Thomas Stuber
 3151, Scot McFadyen
 3152,RaÌ¼l ArÌ©valo
-3153,MatÌ?as Bize
+3153,Matï¿½?as Bize
 3154,Michael Paul Stephenson
 3155,Colin Dench
 3156,Ricky Gervais
 3157,Joachim Fest
 3158, Christian Herrendoerfer
 3159,Malik Vitthal
-3160,JoaquÌ?n MazÌ?n
-3161,JonÌÁs Trueba
+3160,Joaquï¿½?n Mazï¿½?n
+3161,Jonï¿½ï¿½s Trueba
 3162,Peter DeLuise
-3163,Alejandra MÌÁrquez Abella
+3163,Alejandra Mï¿½ï¿½rquez Abella
 3164,SÌ©bastien Betbeder
 3165,Adam Randall
 3166,Marco Dutra
@@ -3189,7 +3190,7 @@ directorId,directorName
 3188, Jeremy Konner
 3189,Vikram Gandhi
 3190,Sean Hanish
-3191,Sinan AkkuÙ
+3191,Sinan Akkuï¿½ï¿½
 3192,Matt Bell
 3193,James Hawes
 3194,Elite Zexer
@@ -3209,7 +3210,7 @@ directorId,directorName
 3208,Linas Phillips
 3209,Jeff Margolis
 3210,Bauddhayan Mukherji
-3211,MarÌ?a Jose Cuevas
+3211,Marï¿½?a Jose Cuevas
 3212,Chris Sparling
 3213, RaÌ¼l Campos Delgado
 3214, Michelle Caputo
@@ -3220,7 +3221,7 @@ directorId,directorName
 3219, Richard Ladkani
 3220,Richard Mears
 3221,Moto Sakakibara
-3222,Emilio MartÌ?nez LÌÁzaro
+3222,Emilio Martï¿½?nez Lï¿½ï¿½zaro
 3223,Osgood Perkins
 3224,Werner Herzog
 3225,Julien Rambaldi
@@ -3337,7 +3338,7 @@ directorId,directorName
 3336,Roger Young
 3337,Rob LaDuca
 3338, Robert C. Ramirez
-3339,IcÌ?ar BollaÌ?n
+3339,Icï¿½?ar Bollaï¿½?n
 3340,Joe Dante
 3341,Ole Bornedal
 3342,Sorin Dan Mihalcescu
@@ -3351,7 +3352,7 @@ directorId,directorName
 3350, David Felix Sutcliffe
 3351,Michael Margolis
 3352,Michael Kennedy
-3353,ÌÒskar ThÌ?r Axelsson
+3353,ï¿½ï¿½skar Thï¿½?r Axelsson
 3354,Karyn Kusama
 3355,Adam Deyoe
 3356,Leif Tilden
@@ -3437,7 +3438,7 @@ directorId,directorName
 3436,Kyle Rideout
 3437,Bryce Wagoner
 3438,Brittany Andrews
-3439,NicolÌÁs LÌ?pez
+3439,Nicolï¿½ï¿½s Lï¿½?pez
 3440,Terry Loane
 3441,Biswajeet Bora
 3442,Castille Landon
@@ -3449,7 +3450,7 @@ directorId,directorName
 3448,Don Bluth
 3449, Gary Goldman
 3450, Dan Kuenster
-3451,VÌ?ctor GarcÌ?a
+3451,Vï¿½?ctor Garcï¿½?a
 3452,Charlie Vaughn
 3453,Chris Blake
 3454,Matthew Hope
@@ -3514,13 +3515,13 @@ directorId,directorName
 3513,Fabrizio Copano
 3514, Augusto Matte
 3515,Mike Rossiter
-3516,Gabe IbÌÁÌ±ez
+3516,Gabe Ibï¿½ï¿½Ì±ez
 3517,Anthony Russo
 3518, Joe Russo
 3519,Levan Tsikurishvili
 3520,Ajay Bahl
-3521,Ìàagan Irmak
-3522,Alejandro G. IÌ±ÌÁrritu
+3521,ï¿½ï¿½agan Irmak
+3522,Alejandro G. IÌ±ï¿½ï¿½rritu
 3523,Shikha Makan
 3524,JosÌ© Eduardo Belmonte
 3525,Adam MacDonald
@@ -3651,7 +3652,7 @@ directorId,directorName
 3650,Daniel Mann
 3651,Daniele Thompson
 3652,Travis Zariwny
-3653,NÌ©stor SÌÁnchez Sotelo
+3653,NÌ©stor Sï¿½ï¿½nchez Sotelo
 3654,Asim Abbasi
 3655,Carlos Bolado
 3656,Scott Marshall Smith
@@ -3844,13 +3845,13 @@ directorId,directorName
 3843,Robert Clouse
 3844,Kurt Wimmer
 3845,Wojciech Marczewski
-3846,Marcelo GonzÌÁlez
+3846,Marcelo Gonzï¿½ï¿½lez
 3847,Valeria Golino
 3848,Robi Michael
 3849,Alex Garland
 3850,James Lee
 3851,Stuart Baird
-3852,Anders SÌümme Hammer
+3852,Anders Sï¿½ï¿½mme Hammer
 3853, Marius Arnesen
 3854, Klaus Erik Okstad
 3855, Olav Njaastad
@@ -3950,7 +3951,7 @@ directorId,directorName
 3949,Eric Juhola
 3950,Anjali Nayar
 3951,James Woodroffe
-3952,Ali Taner Baltac€±
+3952,Ali Taner Baltacï¿½ï¿½
 3953, Mamoru Oshii
 3954, Hideki Futamura
 3955, Toshiyuki Kanno
@@ -4004,7 +4005,7 @@ directorId,directorName
 4003,Vishnu Govindhan
 4004,Daniel Ablin
 4005,Asim Raza
-4006, Cem Y€±lmaz
+4006, Cem Yï¿½ï¿½lmaz
 4007,Neil Armfield
 4008,Anthony Scott Burns
 4009, Nicholas McCarthy
@@ -4064,7 +4065,7 @@ directorId,directorName
 4063,Karey Kirkpatrick
 4064,Walerian Borowczyk
 4065,Taron Lexton
-4066,AytaÌ¤ A€Ù€±rlar
+4066,AytaÌ¤ Aï¿½Ù€ï¿½rlar
 4067,Eric Zaragosa
 4068,Suman Mukhopadhyay
 4069,Jonathan Baker
@@ -4119,7 +4120,7 @@ directorId,directorName
 4118,Pa. Ranjith
 4119,Buta Singh
 4120,Roger Allers
-4121, GaÌÇtan Brizzi
+4121, Gaï¿½ï¿½tan Brizzi
 4122, Paul Brizzi
 4123, Joan C. Gratz
 4124, Mohammed Saeed Harib
@@ -4151,13 +4152,13 @@ directorId,directorName
 4150,Steve Greenwood
 4151,Peter Farrelly
 4152, Bobby Farrelly
-4153,Deniz Gamze ErgÌ?ven
+4153,Deniz Gamze Ergï¿½?ven
 4154,Woo Ming Jin
 4155,Frank Capra
 4156, Joris Ivens
 4157,Alex Proyas
 4158,Jonathan Taylor
-4159,Joachim RÌünning
+4159,Joachim Rï¿½ï¿½nning
 4160, Espen Sandberg
 4161,Gulzar
 4162,Hans Petter Moland
@@ -4175,7 +4176,7 @@ directorId,directorName
 4174,Devin Chanda
 4175,Samir Karnik
 4176,Leandro Mark
-4177, NicolÌÁs Silbert
+4177, Nicolï¿½ï¿½s Silbert
 4178,Giulio Base
 4179,Alejandro Lozano
 4180,Syed Ahmad Afzal
@@ -4202,7 +4203,7 @@ directorId,directorName
 4201, Sonia Dauger
 4202, David Dietz
 4203,John Huston
-4204,Onur ÌÏnlÌ?
+4204,Onur ï¿½ï¿½nlï¿½?
 4205,Jenna Laurenzo
 4206,Justin McConnell
 4207,Kevin Peeples
@@ -4227,7 +4228,7 @@ directorId,directorName
 4226, Nicholas de Pencier
 4227,Sze Yu Lau
 4228,David Wnendt
-4229,Ignacio LÌ?pez EscrivÌÁ
+4229,Ignacio Lï¿½?pez Escrivï¿½ï¿½
 4230,Sarah Moshman
 4231,Charneice Fox
 4232,Saandeep Patel
@@ -4287,7 +4288,7 @@ directorId,directorName
 4286,Bob Hercules
 4287, Rita Coburn Whack
 4288,Samuel D. Pollard
-4289,JesÌ¼s MagaÌ±a VÌÁzquez
+4289,JesÌ¼s MagaÌ±a Vï¿½ï¿½zquez
 4290,Nathan Morlando
 4291,Mina Shum
 4292,Jacek Koprowicz
@@ -4444,7 +4445,7 @@ directorId,directorName
 4443,Morgan Spurlock
 4444,Tim Rouhana
 4445,Noah Moskin
-4446,Jasmine D'Souza
+4446,Jasmine D'Souza460
 4447,Nicolas Winding Refn
 4448,Bill Guttentag
 4449, Michael Ware
@@ -4478,7 +4479,7 @@ directorId,directorName
 4477, Wayne Orr
 4478,Mohd Khairul Azri Bin Md Noor
 4479,Mark Palansky
-4480,J.C. FalcÌ?n
+4480,J.C. Falcï¿½?n
 4481,C.J. Wallis
 4482,James Foley
 4483,Tony Stone
@@ -4611,7 +4612,7 @@ directorId,directorName
 4610,Vicky Matthews
 4611, Gareth Sacala
 4612,Louise Wardle
-4613,Kenneth MÌ?ller
+4613,Kenneth Mï¿½?ller
 4614,Michael Patrick King
 4615,Max Martini
 4616,Krishna Vamshi
@@ -4633,7 +4634,7 @@ directorId,directorName
 4632,Jason Cohen
 4633,Anil Sharma
 4634,Robert Kouba
-4635,Dorian FernÌÁndez-Moris
+4635,Dorian Fernï¿½ï¿½ndez-Moris
 4636,Gregg Bishop
 4637,Corey Grant
 4638,Ekachai Uekrongtham
@@ -4746,7 +4747,7 @@ directorId,directorName
 4745, Casey Suchan
 4746,Jonathan Sobol
 4747,Christian Duguay
-4748,AndrÌ© Ì÷vredal
+4748,AndrÌ© ï¿½ï¿½vredal
 4749,Kurt Voelker
 4750,Elliot Hegarty
 4751,Keith Fulton
@@ -4780,7 +4781,7 @@ directorId,directorName
 4779,Tarek Al Eryan
 4780,Craig Moss
 4781,Magdy Al-Hawwary
-4782,Antonio ChavarrÌ?as
+4782,Antonio Chavarrï¿½?as
 4783,John Stephenson
 4784,Michael Buster
 4785,Bob Nelson
@@ -4797,7 +4798,7 @@ directorId,directorName
 4796,Tariq Khan
 4797,Peter Mortimer
 4798, Josh Lowell
-4799,Cecilia AtÌÁn
+4799,Cecilia Atï¿½ï¿½n
 4800, Valeria Pivato
 4801,Blair Hayes
 4802,William Friedkin
@@ -4844,8 +4845,8 @@ directorId,directorName
 4843,Rob W. King
 4844,Isaac Ezban
 4845,Philip Einstein Lipski
-4846, JÌürgen Lerdam
-4847, Amalie NÌ?sby Fick
+4846, Jï¿½ï¿½rgen Lerdam
+4847, Amalie Nï¿½?sby Fick
 4848,Femi Oyeniran
 4849, Kalvadour Peterson
 4850, Nicky Slimting Walker
@@ -4873,7 +4874,7 @@ directorId,directorName
 4872,Marco Schnabel
 4873,Robert Cannan
 4874, Ross Adam
-4875,Stanisâaw RÌ??ewicz
+4875,Stanisï¿½ï¿½aw Rï¿½?ï¿½?ewicz
 4876,Johnny To
 4877,Robert Tate
 4878,John Mikulak
@@ -4921,7 +4922,7 @@ directorId,directorName
 4920, Marston Sawyers
 4921,Alison MacLean
 4922,Steve Barker
-4923,Dejan Ze€evi€à
+4923,Dejan Zeï¿½ï¿½eviï¿½ï¿½
 4924,Hadi El Bagoury
 4925,Lone Scherfig
 4926,N.D. Wilson
@@ -5168,7 +5169,7 @@ directorId,directorName
 5167,William Hoareau
 5168,Amma Asante
 5169,William K. Howard
-5170,RocÌ?o de Prat Gay
+5170,Rocï¿½?o de Prat Gay
 5171,Jamall Rashaud McMillan
 5172,Harold Trompetero
 5173,Albert Herman
@@ -5183,7 +5184,7 @@ directorId,directorName
 5182,Lynne Ramsay
 5183,Melvin Van Peebles
 5184,Moonbug Entertainment
-5185,MarÌ?a Ripoll
+5185,Marï¿½?a Ripoll
 5186,Siddharth Anand
 5187,Tony Machi
 5188,Anna Mastro
@@ -5247,7 +5248,7 @@ directorId,directorName
 5246, Jackie Cooper
 5247,Laugh Factory
 5248,Angus Benfield
-5249,AdÌÁn Medrano
+5249,Adï¿½ï¿½n Medrano
 5250,Herbert Ross
 5251,Jim Gardner
 5252,Ben Stiller
@@ -5262,7 +5263,7 @@ directorId,directorName
 5261,Craig Ross Jr.
 5262,Rehmat Rayatt
 5263, Leva Kwestany
-5264,Carlos SÌÁnchez
+5264,Carlos Sï¿½ï¿½nchez
 5265,Geordie Day
 5266,Vikram Sirikonda
 5267,Bert I. Gordon
@@ -5324,7 +5325,7 @@ directorId,directorName
 5323,Terry L. Noss
 5324, Richard Rich
 5325,Stephan Schultze
-5326,Martin KrejcÌ?
+5326,Martin Krejcï¿½?
 5327,Roger Corman
 5328,Pascal Laugier
 5329,Wei-Hao Cheng
@@ -5505,7 +5506,7 @@ directorId,directorName
 5504,Eran Kolirin
 5505,Sue Lyon
 5506,Daniel Zirilli
-5507,Mikkel BrÌ?nne Sandemose
+5507,Mikkel Brï¿½?nne Sandemose
 5508,Josef Rusnak
 5509,Ib Melchior
 5510,Callie T. Wiser
@@ -5701,7 +5702,7 @@ directorId,directorName
 5700,Lou Antonio
 5701,Edmond Goulding
 5702,Sukumar
-5703,Jonas ÌÉkerlund
+5703,Jonas ï¿½ï¿½kerlund
 5704,Hannes Rossacher
 5705,John Matthews
 5706, Richard Heap
@@ -5850,7 +5851,7 @@ directorId,directorName
 5849, Luc BÌ©raud
 5850,Prabhakar Meena Bhaskar Pant
 5851,PBS
-5852,MartÌ?n Deus
+5852,Martï¿½?n Deus
 5853,Charles Barton
 5854,George P. Quigley
 5855,MVD
@@ -5929,7 +5930,7 @@ directorId,directorName
 5928,Hugo Fregonese
 5929,Leigh Jason
 5930,George Hickenlooper
-5931,Ìämile Gaudreault
+5931,ï¿½ï¿½mile Gaudreault
 5932,Devin Hume
 5933,Sam Blair
 5934,Kurt Neumann
@@ -5961,7 +5962,7 @@ directorId,directorName
 5960,Michael Kerry Matthews
 5961, Thomas Matthews
 5962,Ramaa Mosley
-5963,Paula HernÌÁndez
+5963,Paula Hernï¿½ï¿½ndez
 5964,David Semel
 5965,Myriam Ballesteros
 5966,Bryan Lewis
@@ -6100,7 +6101,7 @@ directorId,directorName
 6099,Thomas Buschbeck
 6100,Jonah Miles
 6101,G P Rama Krishna
-6102,Tibor TakÌÁcs
+6102,Tibor Takï¿½ï¿½cs
 6103,Sven Unterwaldt
 6104,Jean de Segonzac
 6105,Ian Bagg
@@ -6206,7 +6207,7 @@ directorId,directorName
 6205, Ben Peyser
 6206,Predrag Antonijevic
 6207,Charlie Comparetto
-6208,Nils Skap€ns
+6208,Nils Skapï¿½ï¿½ns
 6209,Aparna Sen
 6210,Santhosh P Jayakumar
 6211,Joan Carr-Wiggin
@@ -6300,7 +6301,7 @@ directorId,directorName
 6299,Gautham Menon
 6300,Peter Kosminsky
 6301, Mary Soan
-6302,HernÌÁn JimÌ©nez
+6302,Hernï¿½ï¿½n JimÌ©nez
 6303,Kevin Lima
 6304,Nickolas Rossi
 6305,Charles BinamÌ©
@@ -6380,7 +6381,7 @@ directorId,directorName
 6379, Terry O. Morse
 6380,Ismael Rodriguez
 6381, Albert C. Gannaway
-6382, Ismael RodrÌ?guez
+6382, Ismael Rodrï¿½?guez
 6383,Chris L. Griffin
 6384,Lew Landers
 6385,Tim McCanlies
@@ -6699,7 +6700,7 @@ directorId,directorName
 6698,Miles Forster
 6699,Michael Glover
 6700,Johnny Royal
-6701,Elan BogarÌ?n & Jonathan BogarÌ?n
+6701,Elan Bogarï¿½?n & Jonathan Bogarï¿½?n
 6702,David Hessemer
 6703, Mark Knight
 6704,Corey L. Branch
@@ -6731,7 +6732,7 @@ directorId,directorName
 6730,Tim Hunter
 6731,Marc Carlini
 6732,John Patterson
-6733,Adrian GrÌ?nberg
+6733,Adrian Grï¿½?nberg
 6734,Nick Powell
 6735,John Pasquin
 6736,Tim Burstall
@@ -6789,7 +6790,7 @@ directorId,directorName
 6788,Fred Walton
 6789,Veera Ganamala
 6790,Gokul
-6791,Ìätienne Chatiliez
+6791,ï¿½ï¿½tienne Chatiliez
 6792,Peter Miller
 6793, Carlos Sandoval
 6794,Robert Garofalo
@@ -6821,7 +6822,7 @@ directorId,directorName
 6820,Deryck Broom
 6821,  Roger Hawkins
 6822,Milon V. Parker
-6823,SÌüren Kragh-Jacobsen
+6823,Sï¿½ï¿½ren Kragh-Jacobsen
 6824,Clea DuVall
 6825,Dustin Marcellino
 6826,Tom DiCillo
@@ -7025,7 +7026,7 @@ directorId,directorName
 7024,Daniel Ziegler
 7025,Tim Brown
 7026,Cynthia Cherry-Leon
-7027,BÌ?rbel Jacks
+7027,Bï¿½?rbel Jacks
 7028,Charlie Fonville
 7029,Marc Brown
 7030,Gavin Rothery
@@ -7054,14 +7055,14 @@ directorId,directorName
 7053,Shaun Garcia
 7054, Orlando Eric Street
 7055,Martin Weisz
-7056,Ñ?¾Ô¾÷?ŠüĞ
+7056,ï¿½ï¿½?ï¿½ï¿½Ô¾ï¿½?ï¿½ï¿½ï¿½
 7057,Matthew Thompson
 7058,R. Rahesh
 7059,Clio Barnard
 7060,David Mitchell
 7061,Gregory Monro
 7062,Lucas James McGraw
-7063,Flavia CasÌÊ
+7063,Flavia Casï¿½ï¿½
 7064,Steve Baker
 7065,John Albarian
 7066,Duncan Coe
@@ -7084,7 +7085,7 @@ directorId,directorName
 7083,Anandh kanumolu
 7084,FrÌ©dÌ©rik D'Amours
 7085,Dennis M. Lynch
-7086, JÌ?rgen Korduletsch
+7086, Jï¿½?rgen Korduletsch
 7087,Antti Jokinen
 7088,Alan Byron
 7089,Barry Battles
@@ -7245,7 +7246,7 @@ directorId,directorName
 7244,Paul-Razvan Macovei
 7245,J. Parthiban
 7246,V.Vinay Kumar
-7247,HÌ©ctor RodrÌ?guez
+7247,HÌ©ctor Rodrï¿½?guez
 7248,Silk White
 7249,Justin Paul Ritter
 7250,Jay Duplass
@@ -7253,7 +7254,7 @@ directorId,directorName
 7252,Sergio Guerrero Garzafox
 7253,David Lee
 7254,John T. Coyle
-7255,Lina WertmÌ?ller
+7255,Lina Wertmï¿½?ller
 7256,Paul A. Kaufman
 7257,Tyler Wayne
 7258,Vijay Peddakotla
@@ -7308,7 +7309,7 @@ directorId,directorName
 7307,Alan Ball
 7308,Renata Gabryjelska
 7309,Dennis Alexander Nicholson
-7310,Alma Har‰Ûªel
+7310,Alma Harï¿½Ûªel
 7311,Tucky Williams
 7312,Richard Tanne
 7313,Patrick Vollrath
@@ -7370,7 +7371,7 @@ directorId,directorName
 7369,B.S.Pradeep Varma
 7370,Bernard Gourley
 7371,James Gardner
-7372,Jonathan JÌ?ggi
+7372,Jonathan Jï¿½?ggi
 7373,Bob Giordano
 7374,Jonathan Tydor
 7375,Christian Tureaud
@@ -7403,7 +7404,7 @@ directorId,directorName
 7402,Sharon Everitt
 7403,ARABINDA MUKHERJEE
 7404,Matt Ruskin
-7405,Ìngel GonzÌÁlez
+7405,Ìngel Gonzï¿½ï¿½lez
 7406, J.J. Englert
 7407,carl lindbergh
 7408,Pedring Lopez
@@ -7411,7 +7412,7 @@ directorId,directorName
 7410,Les Mahoney
 7411,Arvind Kamath
 7412,Chantal Hebert
-7413,Emilio AragÌ?n
+7413,Emilio Aragï¿½?n
 7414,Robbie Moffat
 7415,Will Wallace
 7416,AndrÌ© van Heerden
@@ -7456,7 +7457,7 @@ directorId,directorName
 7455,Janette Clucas
 7456,Andrea Dorfman
 7457,Tamara Tana
-7458,Dan SvÌÁtek
+7458,Dan Svï¿½ï¿½tek
 7459,Dan Grin
 7460,Kenneth Lonergan
 7461,Shelagh Carter
@@ -7481,7 +7482,7 @@ directorId,directorName
 7480,Akarsh Khurana
 7481,John Holdsworth
 7482,Michal Jarzabek
-7483,Rogelio A. GonzÌÁlez
+7483,Rogelio A. Gonzï¿½ï¿½lez
 7484,Kristy de Garis
 7485, Timothy Jolley
 7486,Michal Otlowski
@@ -7587,19 +7588,19 @@ directorId,directorName
 7586,Hani Bay
 7587,Peter Bogdanovich
 7588,Bisong Taiwo
-7589,Roberto RodrÌ?guez
+7589,Roberto Rodrï¿½?guez
 7590,Lucky McKee
 7591,Ernest Morris
 7592,Tony Vidal
 7593,Sandra N. Farrell
-7594,Sergio GarcÌ?a Locatelli
+7594,Sergio Garcï¿½?a Locatelli
 7595,Miguel Courtois
 7596,Aabid Bhushan
-7597,LaÌøla Marrakchi
+7597,Laï¿½ï¿½la Marrakchi
 7598,Eduard Bordukov
 7599,Gowtham Namasivayam
 7600,McKenzie Woodward
-7601,Gerardo GabaldÌ?n
+7601,Gerardo Gabaldï¿½?n
 7602,Avtar Singh
 7603,Michael Andres
 7604,Julio Bracho
@@ -7610,7 +7611,7 @@ directorId,directorName
 7609,Gregory Hatanaka
 7610,Nguyen Nguyen
 7611,Daniel Cohen
-7612,Cris D‰Ûªamato
+7612,Cris Dï¿½Ûªamato
 7613,Chris Paine
 7614,Higuchinsky
 7615,Rob Hardy
@@ -7635,7 +7636,7 @@ directorId,directorName
 7634,Max Lewkowicz
 7635,Gunter H. Sanderson
 7636,Dr.Harnadh policherla
-7637,Jens ÌĞstberg
+7637,Jens ï¿½ï¿½stberg
 7638,Hazel Simpson
 7639,Suku Purvaj
 7640,Agustin CastaÌ±eda
@@ -7674,7 +7675,7 @@ directorId,directorName
 7673, Mike Shiell
 7674, Kris Yim
 7675, Michaela Wadzinski
-7676, Natasha CÌÁnepa Borrero
+7676, Natasha Cï¿½ï¿½nepa Borrero
 7677, Emily Kimes
 7678, Nick Chuang
 7679, RJ JJ Jegatheva
@@ -7686,7 +7687,7 @@ directorId,directorName
 7685, Marta Topolska
 7686,Esther Veronin
 7687,Pipalupa Animation
-7688,Josep MarÌ?a Nunes
+7688,Josep Marï¿½?a Nunes
 7689,Carlos Diegues
 7690,Mohan Bammidi
 7691,Alfredo Hueck
@@ -7694,7 +7695,7 @@ directorId,directorName
 7693,Chris Rogers
 7694,Takashi Miike
 7695,Neil Benn
-7696,Pablo Chamorro GonzÌÁlez
+7696,Pablo Chamorro Gonzï¿½ï¿½lez
 7697,K. Veerakumar
 7698,Anna Matison
 7699,Udit Jawarani
@@ -7721,7 +7722,7 @@ directorId,directorName
 7720,Prince Mabutu Nayabing
 7721,Martin Owen
 7722,Richard Staviarsky
-7723, Vi´o Staviarsky
+7723, Viï¿½ï¿½o Staviarsky
 7724,Keith Habersberger
 7725,Teng Cheng
 7726,Raj Mehta
@@ -7762,7 +7763,7 @@ directorId,directorName
 7761,Connor Ciecko
 7762,Zheng Xu
 7763,Rahul Srivastava
-7764,YÌÈichi Fukuda
+7764,Yï¿½ï¿½ichi Fukuda
 7765,Ian A. Hunt
 7766,Audrey Cummings
 7767,Srinivasa Raju
@@ -7823,7 +7824,7 @@ directorId,directorName
 7822,Lech Majewski
 7823,Gautam Joglekar
 7824,Xiaogang Feng
-7825,NicolÌÁs Onetti
+7825,Nicolï¿½ï¿½s Onetti
 7826, Luciano Onetti
 7827,Sunil Kulkarni
 7828,Jose Mario Salas Boza
@@ -7902,7 +7903,7 @@ directorId,directorName
 7901,Nicholas Danko
 7902,Ben Howard
 7903,Dwayne Labbe
-7904,Ihtziar Hurtado RamÌ?rez
+7904,Ihtziar Hurtado Ramï¿½?rez
 7905,Tathagata Mukherjee
 7906,Gregory Lamberson
 7907,Ganesh Vinayakan
@@ -7967,7 +7968,7 @@ directorId,directorName
 7966,Rajeswari Udayagiri
 7967,Rebecca Ugo
 7968,Fazil
-7969,Kacho LÌ?pez Mari
+7969,Kacho Lï¿½?pez Mari
 7970,AR Murugadoss
 7971,Allan Caggiano
 7972,Ali Askari
@@ -7990,7 +7991,7 @@ directorId,directorName
 7989,Rob Walker
 7990,Andrew Di Pardo
 7991, Brett Kanea
-7992,JosÌ© Nieto RamÌ?rez
+7992,JosÌ© Nieto Ramï¿½?rez
 7993,Felicia Rivers
 7994,Jerry E Thompson
 7995,Aleksandra Szczepanowska
@@ -8077,7 +8078,7 @@ directorId,directorName
 8076, Joan Tosni
 8077,Michael Bouson
 8078,Ryuta Tasaki
-8079,ShÌÈsuke Kaneko
+8079,Shï¿½ï¿½suke Kaneko
 8080,Robert Lieberman
 8081,Trent Cooper
 8082,Storm Ashwood
@@ -8159,10 +8160,10 @@ directorId,directorName
 8158,Derek Kwok
 8159, Henri Wong
 8160,Natalia Malykhina
-8161, Tihoni Br€i€à
+8161, Tihoni Brï¿½ï¿½iï¿½ï¿½
 8162, Fred and Sam Guillaume
-8163, Miran MioÁi€à
-8164, Dinko Kumanovi€à
+8163, Miran Mioï¿½ï¿½iï¿½ï¿½
+8164, Dinko Kumanoviï¿½ï¿½
 8165,Elan Dassani
 8166, Rajeev Dassani
 8167,Jorge Bastidas Zea
@@ -8226,7 +8227,7 @@ directorId,directorName
 8225,Adrian Panek
 8226,Mark Tompkins
 8227,Kristin Marcon
-8228,Mauro IvÌÁn Ojeda
+8228,Mauro Ivï¿½ï¿½n Ojeda
 8229,Brandon Lunzman
 8230,Katoria Chanyasubkit
 8231,David Creed
@@ -8379,7 +8380,7 @@ directorId,directorName
 8378,Shantaram Rajaram Vankudre
 8379,Terry McMahon
 8380,Jeremy Waltman
-8381,Miguel LlansÌ?
+8381,Miguel Llansï¿½?
 8382,Bikash Raj Acharya
 8383,Ravi Kinnagi
 8384,Thomas D. Moser
@@ -8392,7 +8393,7 @@ directorId,directorName
 8391,Stanley Donen
 8392,Joby Harold
 8393,Marcus Dreeke
-8394,RiagÌÁin Grainger
+8394,Riagï¿½ï¿½in Grainger
 8395,Girish Vishwanath
 8396,Lafayette Cabell
 8397,David Blanco
@@ -8417,7 +8418,7 @@ directorId,directorName
 8416,Micheal Bafaro
 8417,Mario N. Bonassin
 8418,Owen Carey Jones
-8419,MiloÁ Forman
+8419,Miloï¿½ï¿½ Forman
 8420,David Howard
 8421,Matthew Pope
 8422,Michael Elkin
@@ -8540,7 +8541,7 @@ directorId,directorName
 8539,Walter V Marshall
 8540,Julio Buchs
 8541, Lucio Fulci
-8542,Cosimo AlemÌÊ
+8542,Cosimo Alemï¿½ï¿½
 8543,Sarah Polley
 8544,Dutta Keshav
 8545,Dustin Guy Defa
@@ -8557,7 +8558,7 @@ directorId,directorName
 8556,Sydney Salkow
 8557,Gordon Freeman
 8558,Rizal Halim
-8559,Ruben ÌĞstlund
+8559,Ruben ï¿½ï¿½stlund
 8560,Greg Miller
 8561,Ikechukwu Onyeka
 8562, Victor Uchegbulem
@@ -8586,7 +8587,7 @@ directorId,directorName
 8585,Dakota Gorman
 8586,J.D. Scott
 8587,Larry Buchanan
-8588,Baldvin ZophonÌ?asson
+8588,Baldvin Zophonï¿½?asson
 8589,Adrian Langley
 8590,Chris Martens
 8591,Robert Young
@@ -8650,7 +8651,7 @@ directorId,directorName
 8649,Bruce Pittman
 8650,Matthew Butler-Hart
 8651,Pablo Aparo
-8652, MartÌ?n Benchimol
+8652, Martï¿½?n Benchimol
 8653,Ruckus Sky
 8654, Lane Skye
 8655,Luca Amhofer
@@ -8695,10 +8696,10 @@ directorId,directorName
 8694,Alexander Peter Lercher
 8695,Michael Carnick
 8696,Vladimir Chubrikov
-8697,Marta FerencovÌÁ
+8697,Marta Ferencovï¿½ï¿½
 8698,Jeffrey Bassetti
 8699,Samuel Marko
-8700,SebastiÌÁn Cordero
+8700,Sebastiï¿½ï¿½n Cordero
 8701,Jesse Stanley
 8702,Johnny Perkins
 8703,Oliver Robins
@@ -8764,7 +8765,7 @@ directorId,directorName
 8763,S. Dharani
 8764,Jeffrey James Binney
 8765,Jonathan Talbert
-8766,RamÌ?n de EspaÌ±a
+8766,Ramï¿½?n de EspaÌ±a
 8767,Robert Stone
 8768,FranÌ¤ois Marthouret
 8769,MADAN RAMIGANI
@@ -8792,7 +8793,7 @@ directorId,directorName
 8791,Barry Shils
 8792,Emeka Mbadiwe
 8793,Armen Adilkhanyan
-8794,Benito FernÌÁndez
+8794,Benito Fernï¿½ï¿½ndez
 8795,Mark Lund
 8796,Chinna
 8797,Satish Ramamoorthy
@@ -8850,7 +8851,7 @@ directorId,directorName
 8849, Amy Feeley
 8850, Toby Roberts
 8851, Deveril
-8852,LucÌ?a Puenzo
+8852,Lucï¿½?a Puenzo
 8853,Stacy Maltin
 8854,Peter James Iengo
 8855,Tucia Lyman
@@ -8921,7 +8922,7 @@ directorId,directorName
 8920,Prince Joy
 8921,Andre Hopson
 8922,A.L. Vijay
-8923, Severin GmÌ?nder
+8923, Severin Gmï¿½?nder
 8924,Gary Clayton
 8925,Charles Matthau
 8926,Alexander Hammett
@@ -8951,7 +8952,7 @@ directorId,directorName
 8950,1
 8951,Hsu Chien
 8952,Chidi Anyanwu
-8953,PÌ´l Ì÷ie
+8953,PÌ´l ï¿½ï¿½ie
 8954,Josh Lawson
 8955,Danny Huston
 8956,Hugo Vivar
@@ -8974,7 +8975,7 @@ directorId,directorName
 8973,Janicza Bravo
 8974,Anthony DiBlasi
 8975,Albert Maysles
-8976,Torsten KÌ?nstler
+8976,Torsten Kï¿½?nstler
 8977,Guru Ramesh
 8978,Richard Dembo
 8979,Robert Megha
@@ -9078,9 +9079,9 @@ directorId,directorName
 9077,Vasanthabalan
 9078,Bob Jaffe
 9079,Jud Taylor
-9080,åÊAntonio Margheriti
+9080,ï¿½ï¿½Antonio Margheriti
 9081,Ajit P. Bhairavkar
-9082,åÊRaoul Walsh
+9082,ï¿½ï¿½Raoul Walsh
 9083, Mario Bava
 9084,Elizabeth Allen Rosenbaum
 9085,Logan
@@ -9159,7 +9160,7 @@ directorId,directorName
 9158,Jamie Robertson
 9159,Jason Campbell
 9160,P. Arokiyadoss
-9161,Irena PavlÌÁskovÌÁ
+9161,Irena Pavlï¿½ï¿½skovï¿½ï¿½
 9162,Robin Sheppard
 9163,Krishnan Jayaraj
 9164,Raaj Zacharias Suresh
@@ -9206,7 +9207,7 @@ directorId,directorName
 9205,Garry Matheny
 9206,Mark DippÌ©
 9207,John Michael Williams
-9208,Adam SedlÌÁk
+9208,Adam Sedlï¿½ï¿½k
 9209,AndrÌ©s Goteira
 9210,K. Asher Levin
 9211,Sanjay Kumar Bharti
@@ -9228,7 +9229,7 @@ directorId,directorName
 9227,Haridas Kesavan
 9228,Sundar Rao Nadkarni
 9229,Robert Mulligan
-9230,DÌ?dac Cervera
+9230,Dï¿½?dac Cervera
 9231,Eric Tsang
 9232, Xiong Xinxin
 9233,Ezhil
@@ -9340,7 +9341,7 @@ directorId,directorName
 9339,Catherine Devaney
 9340,Ned Ehrbar
 9341,Jacob Gentry
-9342,Neasa NÌ? ChianÌÁin
+9342,Neasa Nï¿½? Chianï¿½ï¿½in
 9343, David Rane
 9344,John Hale
 9345,Dror Soref
@@ -9355,7 +9356,7 @@ directorId,directorName
 9354, Rebekah Wiggins
 9355,Meissa Hampton
 9356,Andy Knode
-9357,Alfredo ZacarÌ?as
+9357,Alfredo Zacarï¿½?as
 9358,Kjell Sundvall
 9359,Krishna Ashu Bhati
 9360,Garson Kanin
@@ -9442,7 +9443,7 @@ directorId,directorName
 9441,Steve Anderson
 9442,Andrew Lau
 9443,Damion Damaske
-9444,Erik SkjoldbjÌ?rg
+9444,Erik Skjoldbjï¿½?rg
 9445,Saran K Advaithan
 9446,Malcolm McKay
 9447,Philip Saville
@@ -9877,7 +9878,7 @@ directorId,directorName
 9876,Francesco Mandelli
 9877,Jeff Leroy
 9878,Bill Paxton
-9879,Barbara TopsÌüe-Rothenborg
+9879,Barbara Topsï¿½ï¿½e-Rothenborg
 9880,Kerstin Karlhuber
 9881,Michael Almereyda
 9882,Marcus Gautesen
@@ -9889,7 +9890,7 @@ directorId,directorName
 9888,Kay Cannon
 9889,Kate Sweeney
 9890,Rel Dowdell
-9891,JÌÁn Sabol
+9891,Jï¿½ï¿½n Sabol
 9892,Donald Lawrence Flaherty
 9893,Eric Power
 9894,Aaron McJames
@@ -9967,7 +9968,7 @@ directorId,directorName
 9966,Robert Heath
 9967,Nathan Silver
 9968,Michael Mohan
-9969,Javier SetÌ?
+9969,Javier Setï¿½?
 9970,James Neyman
 9971,Vivek Sharma
 9972,Souvik Mitra
@@ -10063,7 +10064,7 @@ directorId,directorName
 10062,Douglas Elford-Argent
 10063,Adamo P. Cultraro
 10064,Andrew Glazer
-10065,MIchaâ Kondrat
+10065,MIchaï¿½ï¿½ Kondrat
 10066,Shane Meadows
 10067,M. A. Thirumugam
 10068,Ian White
@@ -10078,7 +10079,7 @@ directorId,directorName
 10077,Ersin Celik
 10078,Miguel Morayta
 10079,Shubham Sanjay Shevade
-10080,LaÌ?s Bodanzky
+10080,Laï¿½?s Bodanzky
 10081,Dewi Humphries
 10082,Nick Hurran
 10083,David Morrissey
@@ -10109,7 +10110,7 @@ directorId,directorName
 10108,Rodrigo Garcia
 10109,Jeremy Lovering
 10110,Colin Barr
-10111,Marco HÌ?lser
+10111,Marco Hï¿½?lser
 10112,MÌ©lanie Laurent
 10113,Duane Clark
 10114,David Avallone
@@ -10119,7 +10120,7 @@ directorId,directorName
 10118,Michael Lansu
 10119,Travis Cluff
 10120,Jonathan Butterell
-10121,JosÌ© RamÌ?n Larraz
+10121,JosÌ© Ramï¿½?n Larraz
 10122,Richard T. Heffron
 10123,ANGEL AMUZO MALEDO
 10124,Robbie Lopez
@@ -10163,7 +10164,7 @@ directorId,directorName
 10162,Joe Cornish
 10163,Angie Black
 10164,Mark Blumberg
-10165,JesÌ¼s Enrique LÌ?pez Vargas
+10165,JesÌ¼s Enrique Lï¿½?pez Vargas
 10166, Athziri Morales
 10167, Brandon Ray Alba
 10168,Bruno Mattei
@@ -10236,7 +10237,7 @@ directorId,directorName
 10235,Ka-Wai Kam
 10236,Matt Tauber
 10237,Ian Iqbal Rashid
-10238,Christoph WÌ?rzburger
+10238,Christoph Wï¿½?rzburger
 10239,Russ Parr
 10240,Damon Santostefano
 10241,Andrew Loveday
@@ -10376,7 +10377,7 @@ directorId,directorName
 10375,Victoria Wood
 10376,Dean Tucker
 10377,Hayley MacFarlane
-10378,Martina SakovÌÁ
+10378,Martina Sakovï¿½ï¿½
 10379,Paul Maslansky
 10380,Giovanni Grimaldi
 10381,Jeff Lieberman
@@ -10406,12 +10407,12 @@ directorId,directorName
 10405,Adam Gierasch
 10406,Emmett Alston
 10407,Libor Adam
-10408, Hana HendrychovÌÁ
+10408, Hana Hendrychovï¿½ï¿½
 10409,Julie Cohen
 10410, Betsy West
-10411,Horacio AlcalÌÁ
-10412,Marina Andree Êkop
-10413, Dra?en ?arkovi€à
+10411,Horacio Alcalï¿½ï¿½
+10412,Marina Andree ï¿½ï¿½kop
+10413, Draï¿½?en ï¿½?arkoviï¿½ï¿½
 10414,Robin Bextor
 10415,Jack Beranek
 10416,Esteban Diaz Baena
@@ -10567,7 +10568,7 @@ directorId,directorName
 10566,Keith Strausbaugh
 10567, Anthony Guidubaldi
 10568,Joseph Dougherty
-10569,Claudio FÌ?h
+10569,Claudio Fï¿½?h
 10570,Carlos Dunn
 10571,Gianni Siragusa
 10572,B.J. Rayniak
@@ -10749,7 +10750,7 @@ directorId,directorName
 10748, Leanne Dare
 10749,Josh Boone
 10750,P.J. Hogan
-10751,Salvador SimÌ?
+10751,Salvador Simï¿½?
 10752,Jay Hatcher
 10753,Katie Bauer Murdock
 10754,Louis Gonzales
@@ -10777,7 +10778,7 @@ directorId,directorName
 10776,Enrico Casarosa
 10777,Gary Rydstrom
 10778,Don Hall
-10779, Carlos LÌ?pez Estrada
+10779, Carlos Lï¿½?pez Estrada
 10780,Anthony Hemingway
 10781,Zach A. Parrish
 10782,Aqsa Altaf
@@ -10970,7 +10971,7 @@ directorId,directorName
 10969,Ralph Zondag
 10970, Eric Leighton
 10971,Stuart Gillard
-10972,Ìärik Canuel
+10972,ï¿½ï¿½rik Canuel
 10973,Mark Taylor
 10974,Chris Wilson
 10975,Lu Chuan
@@ -11143,8 +11144,8 @@ directorId,directorName
 11142,Alfred Werker
 11143, Art Stevens
 11144,Hendel Butoy
-11145,¾Ï±Œ¨¦¾Â£ 
-11146, ÕÙ¾ª¼ÁÎ
+11145,ï¿½Ï±ï¿½ï¿½ï¿½ï¿½Â£ 
+11146, ï¿½ï¿½Ù¾ï¿½ï¿½ï¿½ï¿½ï¿½
 11147,Lewis Foster
 11148, Norman Foster
 11149,Robert Wise
@@ -11175,8 +11176,8 @@ directorId,directorName
 11174,Dexter Fletcher
 11175,Mark Waring
 11176,Director Jennifer Kent (The Babadook) tells the sweeping tale of a young woman's quest for revenge set in 1825 against the perilous and unforgiving terrain of Tasmania.
-11177,Director Gigi Saul Guerrero talks through Culture Shock‰Ûªs themes ‰ÛÒ immigration
+11177,Director Gigi Saul Guerrero talks through Culture Shockï¿½Ûªs themes ï¿½ï¿½ï¿½ immigration
 11178, filmmaking
-11179, and latinidad ‰ÛÒ in this one-on-one chat.
+11179, and latinidad ï¿½ï¿½ï¿½ in this one-on-one chat.
 11180,Director Alex Winter goes inside the biggest global corruption scandal in history that was uncovered by hundreds of journalists
 11181, working in secret and at enormous risk.
