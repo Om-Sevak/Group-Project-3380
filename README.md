@@ -7,8 +7,10 @@ MOVIES AND TV SHOWS ON CROSS PLATFORMS.
 Group Members
 -------------
 1. Adwait Pujari
-2. Om Sevak
-3. Vrushil Patel
+2. Meshvi Patel
+3. Om Sevak
+4. Vrushil Patel
+ 
 
 14th Nov 
 
