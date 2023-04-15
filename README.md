@@ -38,6 +38,11 @@ Data Source
 -------------
 The dataset used for this project was obtained from Kaggle. It contains information about various TV Shows and Movies across different platforms.
 
+- https://www.kaggle.com/datasets/shivamb/amazon-prime-movies-and-tv-shows
+- https://www.kaggle.com/datasets/shivamb/disney-movies-and-tv-shows
+- https://www.kaggle.com/datasets/shivamb/hulu-movies-and-tv-shows
+- https://www.kaggle.com/datasets/shivamb/netflix-shows
+
 Disclaimer
 -------------
 This project is for educational purposes only and is not intended for commercial use.
