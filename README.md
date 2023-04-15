@@ -3,7 +3,7 @@
 
 MOVIES AND TV SHOWS ON CROSS PLATFORMS.
 ---------------------------------------
-This repository contains the code for our group project on analyzing TV Shows and Movies. We took the dataset from an open-source website named Kaggle and segregated it using Excel tools such as XLookup. We then used Java and SQL to support queries.
+This repository contains the code for our group project on analyzing TV Shows and Movies. We took the dataset from an open-source website named Kaggle and segregated it using Excel tools such as XLookup. We then used Java and SQL to support queries. For further details regaring the project please view the [Summary](https://github.com/Om-Sevak/Group-Project-3380/blob/c9fc0ae1d0063da9c357a2fbfe37e5b407ff4b11/Summary.pdf).
 
 Contributors
 -------------
