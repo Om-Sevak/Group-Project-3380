@@ -3,21 +3,43 @@
 
 MOVIES AND TV SHOWS ON CROSS PLATFORMS.
 ---------------------------------------
+This repository contains the code for our group project on analyzing TV Shows and Movies. We took the dataset from an open-source website named Kaggle and segregated it using Excel tools such as XLookup. We then used Java and SQL to support queries.
 
-Group Members
+Contributors
 -------------
 1. Adwait Pujari
 2. Meshvi Patel
 3. Om Sevak
 4. Vrushil Patel
  
+Features
+-------------
+- Command line interface (CLI) for user interaction
+- Multiple queries supported
 
-14th Nov 
+Requirements
+-------------
+- Java 8 or higher
+- SQL Server
 
-Merged all the Excel files (Total 6 files - Movies, TV shows, Amazon Prime, Hulu, Disney+ and Netflix) into one big file named Entertainment.csv
+How to use
+-------------
+1. Clone the repository to your local machine.
+2. Open the command line and navigate to the cloned directory.
+3. Run the following command to compile the project:
+ - javac EntertainmentDB.java
+4. To run the compiled file, use the following command:
+ - java EntertainmentDB
+5. Alternatively run the Java code on your desired IDE.
+6. Follow the prompts in the CLI to interact with the database and run queries.
 
-15th Nov
 
-Modified the Entertainment.csv and added additional columns
-Created a Java code that reads the CSV file line by line and store the data collected fron the CSV file.
+Data Source
+-------------
+The dataset used for this project was obtained from Kaggle. It contains information about various TV Shows and Movies across different platforms.
+
+Disclaimer
+-------------
+This project is for educational purposes only and is not intended for commercial use.
+
 
